@@ -19,6 +19,7 @@ public class Main extends Application {
         Scene scene = new Scene(mainPage,1024,600);
         primaryStage.setTitle("Color Switch");
         primaryStage.setScene(scene);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
