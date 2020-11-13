@@ -14,7 +14,7 @@
             <Image url="@../assets/playButton.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="584.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="584.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#exitGame">
          <image>
             <Image url="@../assets/quitButton.jpeg" />
          </image>
