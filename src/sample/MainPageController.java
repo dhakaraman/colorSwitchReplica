@@ -60,4 +60,10 @@ public class MainPageController implements Initializable{
         mainRoot.getChildren().setAll(pane);
     }
 
+    @FXML
+    void loadMenu(MouseEvent event) throws Exception{
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("loadMenu.fxml"));
+        mainRoot.getChildren().setAll(pane);
+    }
+
 }

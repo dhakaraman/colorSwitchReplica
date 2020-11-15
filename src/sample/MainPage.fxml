@@ -19,7 +19,7 @@
             <Image url="@../assets/quitButton.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="312.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="312.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadMenu">
          <image>
             <Image url="@../assets/loadButton.jpeg" />
          </image>
