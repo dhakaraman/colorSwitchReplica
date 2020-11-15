@@ -34,9 +34,6 @@ public class MainPageController implements Initializable{
     private ImageView exitGame;
 
     @FXML
-    private ImageView selectLevel;
-
-    @FXML
     private ImageView loadGame;
 
     @FXML
@@ -59,9 +56,7 @@ public class MainPageController implements Initializable{
 
     @FXML
     void startGame(MouseEvent event) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
-        AnchorPane pane=fxmlLoader.load();
-        sample.GamePlayController controller = fxmlLoader.<GamePlayController>getController();
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         mainRoot.getChildren().setAll(pane);
     }
 

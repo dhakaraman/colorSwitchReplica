@@ -24,10 +24,5 @@
             <Image url="@../assets/loadButton.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="172.0" layoutX="330.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/loadGameText.jpeg" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
