@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable{
+
     @FXML
     private AnchorPane mainRoot;
 

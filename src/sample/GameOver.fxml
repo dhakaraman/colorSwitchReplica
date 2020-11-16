@@ -7,28 +7,23 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/playBackground.jpeg" />
+            <Image url="@../assets/gameOverPageBackground.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="246.0" fitWidth="401.0" layoutX="325.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/gameOverBackground.jpeg" />
-         </image>
+      <ImageView fitHeight="40.0" fitWidth="127.0" layoutX="420.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/newgameButton.jpeg" />-->
+<!--         </image>-->
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="439.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/newgameButton.jpeg" />
-         </image>
+      <ImageView fitHeight="41.0" fitWidth="127.0" layoutX="420.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/mainmenuButton.jpeg" />-->
+<!--         </image>-->
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="439.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/mainmenuButton.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="439.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/quitButton.jpeg" />
-         </image>
+      <ImageView fitHeight="36.0" fitWidth="127.0" layoutX="420.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/quitButton.jpeg" />-->
+<!--         </image>-->
       </ImageView>
    </children>
 </AnchorPane>
