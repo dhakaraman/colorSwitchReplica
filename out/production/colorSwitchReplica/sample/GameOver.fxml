@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOver">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="27.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/gameOverPageBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="127.0" layoutX="420.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/newgameButton.jpeg" />-->
+<!--         </image>-->
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="127.0" layoutX="420.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/mainmenuButton.jpeg" />-->
+<!--         </image>-->
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="127.0" layoutX="420.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+<!--         <image>-->
+<!--            <Image url="@../assets/quitButton.jpeg" />-->
+<!--         </image>-->
+      </ImageView>
+   </children>
+</AnchorPane>
