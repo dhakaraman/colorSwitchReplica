@@ -20,6 +20,7 @@ public class Main extends Application {
         Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
         primaryStage.setTitle("Plants VS Zombies");
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
