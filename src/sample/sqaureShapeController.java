@@ -26,8 +26,8 @@ public class sqaureShapeController {
     @FXML
     private void initialize() {
         Rotate rotation = new Rotate();
-        rotation.pivotXProperty().bind(line5.layoutXProperty());
-        rotation.pivotYProperty().bind(line5.layoutYProperty());
+        rotation.pivotXProperty().bind(line1.layoutXProperty());
+        rotation.pivotYProperty().bind(line1.layoutYProperty());
         line1.getTransforms().add(rotation);
         line2.getTransforms().add(rotation);
         line3.getTransforms().add(rotation);
