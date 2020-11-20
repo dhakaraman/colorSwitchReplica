@@ -9,7 +9,7 @@
          <image>
             <Image url="@../assets/mainPageBackground.png" />
          </image></ImageView>
-      <ImageView fitHeight="120.0" fitWidth="115.0" layoutX="471.0" layoutY="371.0" onMouseClicked="#startGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="115.0" fitWidth="66.0" layoutX="311.0" layoutY="331.0" onMouseClicked="#startGame" pickOnBounds="true" preserveRatio="true">
 <!--         <image>-->
 <!--            <Image url="@../assets/playButton.jpeg" />-->
 <!--         </image>-->
@@ -24,7 +24,17 @@
 <!--            <Image url="@../assets/loadButton.jpeg" />-->
 <!--         </image>-->
       </ImageView>
-       <ImageView fx:id="circle1" fitHeight="150.0" fitWidth="200.0" layoutX="453.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+       <ImageView fx:id="circle1" fitHeight="100.0" fitWidth="171.0" layoutX="370.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../assets/Circle.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="circle2" fitHeight="259.0" fitWidth="150.0" layoutX="325.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../assets/Circle.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="circle3" fitHeight="150.0" fitWidth="115.0" layoutX="631.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../assets/Circle.png" />
            </image>

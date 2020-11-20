@@ -5,9 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import javax.swing.text.html.ImageView;
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,7 +25,12 @@ public class GamePlayController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        try {
+            AnchorPane pane2 = FXMLLoader.load(getClass().getResource("squareShape.fxml"));
+            playRoot.getChildren().addAll(pane2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -31,4 +38,5 @@ public class GamePlayController implements Initializable {
         AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
         playRoot.getChildren().setAll(pane);
     }
+
 }
