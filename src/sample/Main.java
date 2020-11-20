@@ -16,10 +16,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        addMusic();
-        Parent mainPage=FXMLLoader.load(getClass().getResource("squareShape.fxml"));
+        //addMusic();
+        Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
-        primaryStage.setTitle("Plants VS Zombies");
+        primaryStage.setTitle("Color Switch");
 
         primaryStage.setScene(scene);
         primaryStage.show();

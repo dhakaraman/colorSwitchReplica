@@ -33,7 +33,6 @@ public class sqaureShapeController {
         rotation.setPivotX(50);
         rotation.setPivotY(150);
         line1.getTransforms().add(rotation);
-
         r2.setPivotX(50);
         r2.setPivotY(-50);
         line2.getTransforms().add(r2);
@@ -44,9 +43,7 @@ public class sqaureShapeController {
         r4.setPivotY(50);
         line4.getTransforms().add(r4);
 
-
         timeset(rotation, r2);
-
         timeset(r3, r4);
 
 
