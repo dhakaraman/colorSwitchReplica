@@ -7,24 +7,34 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="133.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../assets/mainPageBackground.png" />
+            <Image url="@../assets/MainMenuPageAi.png" />
          </image></ImageView>
-      <ImageView fitHeight="120.0" fitWidth="115.0" layoutX="471.0" layoutY="371.0" onMouseClicked="#startGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="115.0" fitWidth="66.0" layoutX="269.0" layoutY="319.0" onMouseClicked="#startGame" pickOnBounds="true" preserveRatio="true">
 <!--         <image>-->
 <!--            <Image url="@../assets/playButton.jpeg" />-->
 <!--         </image>-->
       </ImageView>
-      <ImageView fitHeight="55.0" fitWidth="200.0" layoutX="732.0" layoutY="422.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="55.0" fitWidth="241.0" layoutX="689.0" layoutY="480.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true">
 <!--         <image>-->
 <!--            <Image url="@../assets/quitButton.jpeg" />-->
 <!--         </image>-->
       </ImageView>
-      <ImageView fitHeight="55.0" fitWidth="200.0" layoutX="125.0" layoutY="428.0" onMouseClicked="#loadMenu" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="55.0" fitWidth="250.0" layoutX="102.0" layoutY="480.0" onMouseClicked="#loadMenu" pickOnBounds="true" preserveRatio="true">
 <!--         <image>-->
 <!--            <Image url="@../assets/loadButton.jpeg" />-->
 <!--         </image>-->
       </ImageView>
-       <ImageView fx:id="circle1" fitHeight="150.0" fitWidth="200.0" layoutX="453.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+       <ImageView fx:id="circle1" fitHeight="100.0" fitWidth="171.0" layoutX="370.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../assets/Circle.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="circle2" fitHeight="198.0" fitWidth="198.0" layoutX="433.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../assets/Circle.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="circle3" fitHeight="150.0" fitWidth="141.0" layoutX="462.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../assets/Circle.png" />
            </image>

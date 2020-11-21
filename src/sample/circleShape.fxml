@@ -9,6 +9,6 @@
       <Arc fx:id="arc2" fill="#ff1f74" layoutX="288.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
       <Arc fx:id="arc3" fill="#f3ff1f" layoutX="288.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="180.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
       <Arc fx:id="arc4" fill="#1fff47" layoutX="288.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
-      <Circle fx:id="circle" fill="WHITE" layoutX="288.0" layoutY="154.0" radius="50.0" stroke="BLACK" strokeType="INSIDE"  strokeWidth="2.0"/>
+      <Circle fx:id="circle" fill="WHITE" layoutX="288.0" layoutY="154.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
    </children>
 </Pane>

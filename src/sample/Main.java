@@ -11,6 +11,7 @@ import javafx.util.Duration;
 import java.io.*;
 import java.net.URL;
 
+
 public class Main extends Application {
     public static MediaPlayer mediaPlayer;
 
@@ -39,3 +40,6 @@ public class Main extends Application {
         launch(args);
     }
 }
+
+
+
