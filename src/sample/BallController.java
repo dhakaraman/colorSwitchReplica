@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Scene;
@@ -22,7 +23,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class BallController implements Initializable {
+public class BallController  {
     @FXML
     public AnchorPane BallRoot;
 
@@ -30,13 +31,13 @@ public class BallController implements Initializable {
     public Circle ball;
 
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() throws Exception{
 
     }
 
-    public void play(MouseEvent mouseEvent) {
+
+
+    public void play(MouseEvent mouseEvent) throws Exception {
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ball.layoutYProperty(), ball.getLayoutY() - 65)));
@@ -46,6 +47,9 @@ public class BallController implements Initializable {
         t2.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(actionEvent -> t2.play());
-
+        if(ball.getLayoutY()>600){
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
+            BallRoot.getChildren().setAll(pane);
+        }
     }
 }
