@@ -7,16 +7,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
-public class GameOverController implements Initializable {
+public class GameOverController {
     @FXML
     public AnchorPane OverRoot;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-    }
     void exitGame(MouseEvent event) {
 //        try{
 ////            Main.serialize();
