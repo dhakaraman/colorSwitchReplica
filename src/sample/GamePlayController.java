@@ -22,7 +22,6 @@ public class GamePlayController  {
     @FXML
     private ImageView pauseGame;
 
-
     public void initialize() throws Exception {
         int shape = randomGenrator();
         AnchorPane pane2= FXMLLoader.load(getClass().getResource("Ball.fxml"));
@@ -32,7 +31,6 @@ public class GamePlayController  {
             AnchorPane pane= FXMLLoader.load(getClass().getResource("circleShape.fxml"));
             playRoot.getChildren().addAll(pane);
         }
-
         if(shape==2){
             AnchorPane pane= FXMLLoader.load(getClass().getResource("triangleShape.fxml"));
             playRoot.getChildren().addAll(pane);
@@ -40,6 +38,10 @@ public class GamePlayController  {
 
         if(shape==3){
             AnchorPane pane= FXMLLoader.load(getClass().getResource("squareShape.fxml"));
+            playRoot.getChildren().addAll(pane);
+        }
+        if(shape==4){
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("LineShape.fxml"));
             playRoot.getChildren().addAll(pane);
         }
 

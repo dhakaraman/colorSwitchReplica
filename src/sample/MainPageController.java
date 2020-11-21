@@ -79,17 +79,17 @@ public class MainPageController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//            RotateTransition transition1 = new RotateTransition(Duration.seconds(4000), circle1);
-//            transition1.setByAngle(300000000);
-//            transition1.play();
-//
-//            RotateTransition transition2 = new RotateTransition(Duration.seconds(4000), circle2);
-//            transition2.setByAngle(300000000);
-//            transition2.play();
-//
-//            RotateTransition transition3 = new RotateTransition(Duration.seconds(4000), circle3);
-//            transition3.setByAngle(-300000000);
-//            transition3.play();
+            RotateTransition transition1 = new RotateTransition(Duration.seconds(4000), circle1);
+            transition1.setByAngle(300000000);
+            transition1.play();
+
+            RotateTransition transition2 = new RotateTransition(Duration.seconds(4000), circle2);
+            transition2.setByAngle(300000000);
+            transition2.play();
+
+            RotateTransition transition3 = new RotateTransition(Duration.seconds(4000), circle3);
+            transition3.setByAngle(-300000000);
+            transition3.play();
 
     }
 

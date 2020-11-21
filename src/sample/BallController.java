@@ -33,9 +33,8 @@ public class BallController  {
 
     public void initialize() throws Exception{
 
+
     }
-
-
 
     public void play(MouseEvent mouseEvent) throws Exception {
         Bounds bounds = BallRoot.getBoundsInLocal();
@@ -47,9 +46,6 @@ public class BallController  {
         t2.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(actionEvent -> t2.play());
-//        if(ball.getLayoutY()>600){
-//            AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
-//            BallRoot.getChildren().setAll(pane);
-//        }
+
     }
 }
