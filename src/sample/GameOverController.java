@@ -1,4 +1,4 @@
 package sample;
 
-public class GameOverController {
+public class GameOverController  {
 }
