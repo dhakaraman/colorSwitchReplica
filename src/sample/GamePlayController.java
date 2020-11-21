@@ -48,7 +48,7 @@ public class GamePlayController  {
     }
     int randomGenrator(){
         Random random = new Random();
-        int ans = random.nextInt(4);
+        int ans = random.nextInt(4)+1;
         return ans;
     }
     @FXML

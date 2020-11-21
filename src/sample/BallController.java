@@ -47,9 +47,9 @@ public class BallController  {
         t2.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(actionEvent -> t2.play());
-        if(ball.getLayoutY()>600){
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
-            BallRoot.getChildren().setAll(pane);
-        }
+//        if(ball.getLayoutY()>600){
+//            AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
+//            BallRoot.getChildren().setAll(pane);
+//        }
     }
 }
