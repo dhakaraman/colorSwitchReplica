@@ -1,13 +1,17 @@
 package sample;
 import javafx.animation.*;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Point3D;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
-public class sqaureShapeController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class sqaureShapeController implements Initializable {
 
     @FXML
     private Line line1;
@@ -23,9 +27,21 @@ public class sqaureShapeController {
 
     @FXML
     private Line line5;
+    
+    private void timeset(Rotate rotation, Rotate r2) {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(rotation.angleProperty(), 0)),
+                new KeyFrame(Duration.seconds(1000), new KeyValue(rotation.angleProperty(), 36000)));
+        timeline.play();
 
-    @FXML
-    private void initialize() {
+        Timeline t2 = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(r2.angleProperty(), 0)),
+                new KeyFrame(Duration.seconds(1000), new KeyValue(r2.angleProperty(), 36000)));
+        t2.play();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         Rotate rotation = new Rotate();
         Rotate r2 = new Rotate();
         Rotate r3 = new Rotate();
@@ -45,20 +61,5 @@ public class sqaureShapeController {
 
         timeset(rotation, r2);
         timeset(r3, r4);
-
-
     }
-
-    private void timeset(Rotate rotation, Rotate r2) {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(rotation.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(rotation.angleProperty(), 36000)));
-        timeline.play();
-
-        Timeline t2 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r2.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r2.angleProperty(), 36000)));
-        t2.play();
-    }
-
 }
