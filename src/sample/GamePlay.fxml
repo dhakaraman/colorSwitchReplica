@@ -10,7 +10,7 @@
             <Image url="@../assets/PlayBackGroundAi.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="902.0" layoutY="37.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
       </ImageView>
       <ImageView fitHeight="47.0" fitWidth="51.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
