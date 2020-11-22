@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,13 +32,12 @@ public class BallController  {
     @FXML
     public Circle ball;
 
-
     public void initialize() throws Exception{
-
 
     }
 
-    public void play(MouseEvent mouseEvent) throws Exception {
+    @FXML
+    public void play(ActionEvent event) throws IOException {
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ball.layoutYProperty(), ball.getLayoutY() - 65)));
@@ -46,6 +47,5 @@ public class BallController  {
         t2.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(actionEvent -> t2.play());
-
     }
 }

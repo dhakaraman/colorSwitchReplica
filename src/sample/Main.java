@@ -21,11 +21,9 @@ public class Main extends Application {
         Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
         primaryStage.setTitle("Color Switch");
-
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
 
     public void addMusic() {
         Media sound = new Media(getClass().getResource("/assets/achat.wav").toString());
@@ -40,6 +38,7 @@ public class Main extends Application {
         launch(args);
     }
 }
+
 
 
 
