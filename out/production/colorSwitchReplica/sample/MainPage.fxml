@@ -32,22 +32,22 @@
                <Image url="@../assets/Circle.png" />
            </image>
        </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="115.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="linex1" fitHeight="150.0" fitWidth="200.0" layoutX="115.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/LinesX.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="750.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="linex2" fitHeight="150.0" fitWidth="200.0" layoutX="750.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/LinesX.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="447.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle4" fitHeight="55.0" fitWidth="49.0" layoutX="447.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="60.0" layoutX="534.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle5" fitHeight="49.0" fitWidth="60.0" layoutX="534.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Circle.png" />
          </image>

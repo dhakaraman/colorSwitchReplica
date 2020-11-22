@@ -27,7 +27,8 @@ public class GamePlayController  {
     @FXML
     private ImageView pauseGame;
 
-    public void initialize() throws Exception {
+
+    public void initialize()  throws Exception {
 
         int shape = randomGenrator();
         AnchorPane pane2= FXMLLoader.load(getClass().getResource("Ball.fxml"));
