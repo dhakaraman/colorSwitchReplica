@@ -27,7 +27,6 @@ public class Main extends Application {
     }
 
 
-
     public void addMusic() {
         Media sound = new Media(getClass().getResource("/assets/achat.wav").toString());
         mediaPlayer = new MediaPlayer(sound);

@@ -1,10 +1,12 @@
 package sample;
 
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import javax.swing.text.html.ImageView;
 import java.awt.*;
@@ -17,12 +19,16 @@ public class GamePlayController  {
     private AnchorPane playRoot;
 
     @FXML
+    private ImageView circle1;
+
+    @FXML
     private Button pauseGame1;
 
     @FXML
     private ImageView pauseGame;
 
     public void initialize() throws Exception {
+
         int shape = randomGenrator();
         AnchorPane pane2= FXMLLoader.load(getClass().getResource("Ball.fxml"));
         playRoot.getChildren().addAll(pane2);
