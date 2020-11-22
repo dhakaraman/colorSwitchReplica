@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 import javax.swing.text.html.ImageView;
@@ -26,6 +27,7 @@ public class GameOverController{
 
 
     public void initialize() {
+
 //        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
 //        transition1.setByAngle(3600);
 //        transition1.setCycleCount(50);
@@ -59,8 +61,5 @@ public class GameOverController{
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         OverRoot.getChildren().setAll(pane);
     }
-
-
-
 
 }

@@ -12,8 +12,6 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
 public class MainPageController implements Initializable{
 
     @FXML

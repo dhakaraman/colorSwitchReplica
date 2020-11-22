@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
@@ -9,6 +10,11 @@
       <Arc fx:id="arc2" fill="#ff0181" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="CHORD" />
       <Arc fx:id="arc3" fill="#fae100" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="180.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="CHORD" />
       <Arc fx:id="arc4" fill="#32dbf0" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="CHORD" />
+      <ImageView fitHeight="44.0" fitWidth="38.0" layoutX="481.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/star.png" />
+         </image>
+      </ImageView>
 
    </children>
 </AnchorPane>

@@ -36,15 +36,15 @@ public class triangleShapeController implements Initializable{
         Rotate r3 = new Rotate();
 
         r1.setPivotX(100);
-        r1.setPivotY(60);
+        r1.setPivotY(70);
         tri1.getTransforms().add(r1);
 
         r2.setPivotX(100);
-        r2.setPivotY(60);
+        r2.setPivotY(70);
         tri2.getTransforms().add(r2);
 
         r3.setPivotX(100);
-        r3.setPivotY(60);
+        r3.setPivotY(70);
         tri3.getTransforms().add(r3);
 
         timeset(r1,r2,r3);

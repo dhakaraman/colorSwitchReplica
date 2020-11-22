@@ -42,7 +42,7 @@ public class BallController  {
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ball.layoutYProperty(), ball.getLayoutY() - 65)));
         timeline.setCycleCount(1);
-        Timeline t2 = new Timeline(new KeyFrame(Duration.millis(800),
+        Timeline t2 = new Timeline(new KeyFrame(Duration.millis(600),
                 new KeyValue(ball.layoutYProperty(), bounds.getMaxY()+ball.getRadius())));
         t2.setCycleCount(1);
         timeline.play();
