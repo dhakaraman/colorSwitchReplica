@@ -64,4 +64,9 @@ public class sqaureShapeController extends Obstracle implements Initializable {
         timeset(rotation, r2);
         timeset(r3, r4);
     }
+
+    @Override
+    public boolean checkColor(BallController ball) {
+        return false;
+    }
 }

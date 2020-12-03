@@ -14,7 +14,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class pauseMenuController extends Obstracle implements Initializable {
+public class pauseMenuController  implements Initializable {
     @FXML
     private AnchorPane pauseRoot;
 

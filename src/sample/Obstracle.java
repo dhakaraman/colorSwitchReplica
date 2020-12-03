@@ -2,6 +2,8 @@ package sample;
 
 public abstract class Obstracle  {
 
+    public abstract boolean checkColor(BallController ball);
+
     public float movingSpeed(){
         return 0;
     }

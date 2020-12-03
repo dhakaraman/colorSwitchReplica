@@ -2,13 +2,14 @@ package sample;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Arc;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 import javax.swing.text.html.ImageView;
 
-public class circleShapeController {
+public class circleShapeController extends Obstracle {
 
     @FXML
     private Arc arc1;
@@ -21,6 +22,9 @@ public class circleShapeController {
 
     @FXML
     private Arc arc4;
+
+    @FXML
+    public Circle innerPart;
 
 
     @FXML
@@ -74,4 +78,22 @@ public class circleShapeController {
 
     }
 
+    @Override
+    public boolean checkColor(BallController ball) {
+        if(ball.ball.getFill() == arc1.getFill()){
+            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            else
+                return false;
+        }
+        else{
+            return false;
+        }
+    }
 }

@@ -68,6 +68,11 @@ public class triangleShapeController extends Obstracle implements Initializable{
                 new KeyFrame(Duration.seconds(1000), new KeyValue(r3.angleProperty(), 36000)));
         t3.play();
     }
+
+    @Override
+    public boolean checkColor(BallController ball) {
+        return false;
+    }
 }
 
 

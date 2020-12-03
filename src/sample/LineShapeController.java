@@ -136,5 +136,8 @@ public class LineShapeController extends Obstracle implements Initializable {
 
     }
 
-
+    @Override
+    public boolean checkColor(BallController ball) {
+        return false;
+    }
 }

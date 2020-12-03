@@ -20,6 +20,8 @@ public class GamePlayController  {
     @FXML
     AnimationTimer timer;
 
+    Double t;
+
     @FXML
     private AnchorPane playRoot;
 
@@ -34,13 +36,15 @@ public class GamePlayController  {
     @FXML
     private ImageView pauseGame;
 
+    BallController ball;
+
 
     public void initialize()  throws Exception{
 
-        int shape = 3;
+        int shape = 1;
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
-        BallController ball = load1.getController();
+        ball = load1.getController();
         AnchorPane obstraclePane;
 
         if (shape == 1) {
@@ -71,7 +75,11 @@ public class GamePlayController  {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                update();
+                try {
+                    update();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
         };
@@ -81,7 +89,18 @@ public class GamePlayController  {
 
     }
 
-    void update(){
+    void update() throws Exception{
+        t+=0.016;
+
+        boolean color=obstracle.checkColor(ball);
+        if(color){
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+            playRoot.getChildren().setAll(pane);
+        }
+
+        if(t>2){
+            t= Double.valueOf(0);
+        }
 
     }
 
