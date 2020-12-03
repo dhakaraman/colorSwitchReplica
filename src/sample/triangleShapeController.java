@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Rotate;
 
 import javax.xml.crypto.dsig.Reference;
@@ -14,12 +15,12 @@ import javafx.scene.shape.Arc;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import sun.plugin.javascript.navig.Anchor;
 
 
-
-
-public class triangleShapeController implements Initializable{
-
+public class triangleShapeController extends Obstracle implements Initializable{
+    @FXML
+    AnchorPane trianglePane;
     @FXML
     private Line tri1;
 

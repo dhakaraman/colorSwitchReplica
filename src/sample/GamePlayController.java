@@ -23,11 +23,7 @@ public class GamePlayController  {
     @FXML
     private AnchorPane playRoot;
 
-    @FXML
-    private AnchorPane ballPane;
-
-    @FXML
-    private AnchorPane obstraclePane;
+    Obstracle obstracle;
 
     @FXML
     private ImageView circle1;
@@ -41,26 +37,32 @@ public class GamePlayController  {
 
     public void initialize()  throws Exception{
 
-        int shape = randomGenrator();
-        FXMLLoader load = FXMLLoader.load(getClass().getResource("Ball.fxml"));
-        ballPane = load.load();
+        int shape = 3;
+        FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
+        AnchorPane ballPane = load1.load();
+        BallController ball = load1.getController();
+        AnchorPane obstraclePane;
 
         if (shape == 1) {
-            FXMLLoader load2 = FXMLLoader.load(getClass().getResource("circleShape.fxml"));
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("circleShape.fxml"));
             obstraclePane = load2.load();
+            obstracle=load2.getController();
         }
-        if (shape == 2) {
-            FXMLLoader load2 = FXMLLoader.load(getClass().getResource("triangleShape.fxml"));
-            obstraclePane = load2.load();
+        else if (shape == 2) {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
+            obstraclePane= load2.load();
+            obstracle=load2.getController();
         }
 
-        if (shape == 3) {
-            FXMLLoader load2 = FXMLLoader.load(getClass().getResource("squareShape.fxml"));
+        else if (shape == 3) {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
             obstraclePane = load2.load();
+            obstracle=load2.getController();
         }
-        if (shape == 4) {
-            FXMLLoader load2 = FXMLLoader.load(getClass().getResource("LineShape.fxml"));
+        else {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
             obstraclePane = load2.load();
+            obstracle=load2.getController();
         }
 
         playRoot.getChildren().addAll(ballPane);

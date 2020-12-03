@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.triangleShapeController">
+<AnchorPane fx:id="trianglePane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.triangleShapeController">
    <children>
       <Line fx:id="tri1" endX="100.0" layoutX="410.0" layoutY="87.0" startX="22.0" startY="124.0" stroke="#e40693" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="tri2" endX="176.0" endY="115.0" layoutX="410.0" layoutY="87.0" startX="22.0" startY="124" stroke="#caf50a" strokeLineCap="ROUND" strokeWidth="10.0" />

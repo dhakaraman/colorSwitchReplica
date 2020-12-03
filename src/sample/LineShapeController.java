@@ -13,7 +13,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LineShapeController implements Initializable {
+public class LineShapeController extends Obstracle implements Initializable {
 
 
 

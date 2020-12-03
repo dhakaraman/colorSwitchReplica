@@ -3,6 +3,7 @@ import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point3D;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
@@ -11,8 +12,9 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class sqaureShapeController implements Initializable {
-
+public class sqaureShapeController extends Obstracle implements Initializable {
+    @FXML
+    AnchorPane squareRoot;
     @FXML
     private Line line1;
 

@@ -17,7 +17,5 @@
             <Image url="@../assets/Circle111.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="ballpane" layoutX="389.0" layoutY="374.0" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane fx:id="obstraclePane"   layoutX="389.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
