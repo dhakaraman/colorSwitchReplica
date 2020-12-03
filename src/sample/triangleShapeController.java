@@ -15,7 +15,7 @@ import javafx.scene.shape.Arc;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
-import sun.plugin.javascript.navig.Anchor;
+
 
 
 public class triangleShapeController extends Obstracle implements Initializable{

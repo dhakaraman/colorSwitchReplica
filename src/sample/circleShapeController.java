@@ -92,8 +92,44 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
+        else if(ball.ball.getFill() == arc2.getFill()){
+            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            else
+                return false;
+        }
+        else if(ball.ball.getFill() == arc3.getFill()){
+            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            else
+                return false;
+        }
+        else if(ball.ball.getFill() == arc4.getFill()){
+            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+                return true;
+            }
+            else
+                return false;
+        }
         else{
-            return false;
+            return true;
         }
     }
 }

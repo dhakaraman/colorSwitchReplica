@@ -20,7 +20,7 @@ public class GamePlayController  {
     @FXML
     AnimationTimer timer;
 
-    Double t;
+    double t;
 
     @FXML
     private AnchorPane playRoot;
@@ -90,6 +90,8 @@ public class GamePlayController  {
     }
 
     void update() throws Exception{
+
+
         t+=0.016;
 
         boolean color=obstracle.checkColor(ball);
@@ -99,7 +101,8 @@ public class GamePlayController  {
         }
 
         if(t>2){
-            t= Double.valueOf(0);
+            //t= Double.valueOf(0);
+            t=0;
         }
 
     }
