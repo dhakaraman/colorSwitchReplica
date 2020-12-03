@@ -80,7 +80,7 @@ public class circleShapeController extends Obstracle {
 
     @Override
     public boolean checkColor(BallController ball) {
-        if(ball.ball.getFill() == arc1.getFill()){
+        if(ball.ball.getFill().equals(arc1.getFill())){
             if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
                 return true;
             if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
@@ -92,7 +92,7 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-        else if(ball.ball.getFill() == arc2.getFill()){
+        else if(ball.ball.getFill().equals(arc2.getFill())){
             if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
                 return true;
             if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
@@ -104,7 +104,7 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-        else if(ball.ball.getFill() == arc3.getFill()){
+        else if(ball.ball.getFill().equals(arc3.getFill())){
             if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
                 return true;
             if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
@@ -116,7 +116,6 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-//        else (ball.ball.getFill() == arc4.getFill()){
         else{
             if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
                 return true;
@@ -130,8 +129,5 @@ public class circleShapeController extends Obstracle {
                 return false;
         }
 
-//        else{
-//            return false;
-//        }
     }
 }

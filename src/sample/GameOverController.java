@@ -41,7 +41,7 @@ public class GameOverController{
 //        transition1.play();
     }
 
-    void exitGame(MouseEvent event) {
+    public void exitGame(MouseEvent event) {
 //        try{
 ////            Main.serialize();
 //        }
@@ -51,13 +51,13 @@ public class GameOverController{
         System.exit(0);
     }
 
-    void mainMenu(MouseEvent event) throws Exception{
+    public void mainMenu(MouseEvent event) throws Exception{
         AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         OverRoot.getChildren().setAll(pane);
     }
 
     @FXML
-    void newGame(MouseEvent event) throws Exception{
+    public void newGame(MouseEvent event) throws Exception{
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         OverRoot.getChildren().setAll(pane);
     }
