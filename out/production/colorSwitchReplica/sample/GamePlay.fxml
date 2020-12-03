@@ -12,10 +12,12 @@
       </ImageView>
       <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <ImageView fitHeight="53.0" fitWidth="47.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="a" fitHeight="53.0" fitWidth="47.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Circle111.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="ballpane" layoutX="389.0" layoutY="374.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane fx:id="obstraclePane"   layoutX="389.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
