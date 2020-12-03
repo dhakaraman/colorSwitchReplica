@@ -116,7 +116,8 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-        else if(ball.ball.getFill() == arc4.getFill()){
+//        else (ball.ball.getFill() == arc4.getFill()){
+        else{
             if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
                 return true;
             if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
@@ -128,8 +129,9 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-        else{
-            return true;
-        }
+
+//        else{
+//            return false;
+//        }
     }
 }
