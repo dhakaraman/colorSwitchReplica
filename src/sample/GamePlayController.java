@@ -39,35 +39,35 @@ public class GamePlayController  {
     BallController ball;
 
 
-    public void initialize()  throws Exception{
+    public void initialize() throws Exception{
 
-        int shape = 1;
+        int shape = 55;
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
         ball = load1.getController();
         AnchorPane obstraclePane;
 
-        if (shape == 1) {
+        //if (shape == 1) {
             FXMLLoader load2 = new FXMLLoader(getClass().getResource("circleShape.fxml"));
             obstraclePane = load2.load();
             obstracle=load2.getController();
-        }
-        else if (shape == 2) {
-            FXMLLoader load2 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
-            obstraclePane= load2.load();
-            obstracle=load2.getController();
-        }
+       // }
+       // else if (shape == 2) {
+            FXMLLoader load3 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
+            obstraclePane= load3.load();
+            obstracle=load3.getController();
+       // }
 
-        else if (shape == 3) {
-            FXMLLoader load2 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
-            obstraclePane = load2.load();
-            obstracle=load2.getController();
-        }
-        else {
-            FXMLLoader load2 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
-            obstraclePane = load2.load();
-            obstracle=load2.getController();
-        }
+//        if (shape == 3) {
+//            FXMLLoader load2 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
+//            obstraclePane = load2.load();
+//            obstracle=load2.getController();
+//        }
+//        else {
+//            FXMLLoader load2 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
+//            obstraclePane = load2.load();
+//            obstracle=load2.getController();
+//        }
 
         playRoot.getChildren().addAll(ballPane);
         playRoot.getChildren().addAll(obstraclePane);
@@ -85,7 +85,7 @@ public class GamePlayController  {
         };
         timer.start();
 
-        System.out.print(shape);
+        //System.out.print(shape);
 
     }
 
@@ -101,7 +101,6 @@ public class GamePlayController  {
         if(t>2){
             t= 0;
         }
-
     }
 
     int randomGenrator(){
@@ -109,6 +108,7 @@ public class GamePlayController  {
         int ans = random.nextInt(4)+1;
         return ans;
     }
+
     @FXML
     void pauseGame(MouseEvent event) throws Exception{
         AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));

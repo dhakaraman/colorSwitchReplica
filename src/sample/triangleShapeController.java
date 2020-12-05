@@ -71,7 +71,32 @@ public class triangleShapeController extends Obstracle implements Initializable{
 
     @Override
     public boolean checkColor(BallController ball) {
-        return false;
+
+        if(ball.ball.getFill().equals(tri1.getFill())){
+            if(tri2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(tri3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            else
+                return false;
+        }
+        else if(ball.ball.getFill().equals(tri2.getFill())){
+            if(tri1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(tri3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            else
+                return false;
+        }
+
+        else {
+            if(tri2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            if(tri1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+                return true;
+            else
+                return false;
+        }
     }
 }
 
