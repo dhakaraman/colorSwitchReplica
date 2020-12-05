@@ -41,33 +41,33 @@ public class GamePlayController  {
 
     public void initialize() throws Exception{
 
-        int shape = 55;
+        int shape = randomGenrator();
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
         ball = load1.getController();
         AnchorPane obstraclePane;
 
-        //if (shape == 1) {
+        if (shape == 1) {
             FXMLLoader load2 = new FXMLLoader(getClass().getResource("circleShape.fxml"));
             obstraclePane = load2.load();
             obstracle=load2.getController();
-       // }
-       // else if (shape == 2) {
-            FXMLLoader load3 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
-            obstraclePane= load3.load();
-            obstracle=load3.getController();
-       // }
+        }
+        else if (shape == 2) {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
+            obstraclePane= load2.load();
+            obstracle=load2.getController();
+        }
 
-//        if (shape == 3) {
-//            FXMLLoader load2 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
-//            obstraclePane = load2.load();
-//            obstracle=load2.getController();
-//        }
-//        else {
-//            FXMLLoader load2 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
-//            obstraclePane = load2.load();
-//            obstracle=load2.getController();
-//        }
+        else if (shape == 3) {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
+            obstraclePane = load2.load();
+            obstracle=load2.getController();
+        }
+        else {
+            FXMLLoader load2 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
+            obstraclePane = load2.load();
+            obstracle=load2.getController();
+        }
 
         playRoot.getChildren().addAll(ballPane);
         playRoot.getChildren().addAll(obstraclePane);
