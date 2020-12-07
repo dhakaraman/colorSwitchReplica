@@ -12,16 +12,16 @@ import javax.swing.text.html.ImageView;
 public class circleShapeController extends Obstracle {
 
     @FXML
-    private Arc arc1;
+    public Arc arc1;
 
     @FXML
-    private Arc arc2;
+    public Arc arc2;
 
     @FXML
-    private Arc arc3;
+    public Arc arc3;
 
     @FXML
-    private Arc arc4;
+    public Arc arc4;
 
     @FXML
     public Circle innerPart;
@@ -80,54 +80,57 @@ public class circleShapeController extends Obstracle {
 
     @Override
     public boolean checkColor(BallController ball) {
-        if(ball.ball.getFill().equals(arc1.getFill())){
-            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        //System.out.println(arc1.getLayoutY());
+
+        if(ball.ballID.getFill().equals(arc1.getFill())){
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
-                return true;
-            }
-            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
-                return true;
-            }
-            else
-                return false;
-        }
-        else if(ball.ball.getFill().equals(arc2.getFill())){
-            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
-                return true;
-            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
-            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
             else
                 return false;
         }
-        else if(ball.ball.getFill().equals(arc3.getFill())){
-            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        else if(ball.ballID.getFill().equals(arc2.getFill())){
+            if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
-            if(arc4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+                return true;
+            }
+            else
+                return false;
+        }
+        else if(ball.ballID.getFill().equals(arc3.getFill())){
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+                return true;
+            if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+                return true;
+            }
+            if(arc4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
             else
                 return false;
         }
         else{
-            if(arc2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(arc3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
-            if(arc1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ball.getBoundsInParent())){
+            if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
             else
                 return false;
         }
+
 
     }
 }

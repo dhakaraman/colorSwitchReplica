@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -30,7 +31,9 @@ public class BallController  {
     public AnchorPane BallRoot;
 
     @FXML
-    public Circle ball;
+    public Circle ballID;
+
+    circleShapeController obj;
 
     public void initialize() throws Exception{
 
@@ -38,12 +41,14 @@ public class BallController  {
 
     @FXML
     public void play(ActionEvent event) throws IOException {
+        //System.out.println(obj.arc1.getLayoutY());
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
-                new KeyValue(ball.layoutYProperty(), ball.getLayoutY() - 65)));
+                new KeyValue(ballID.layoutYProperty(), ballID.getLayoutY() - 65)));
         timeline.setCycleCount(1);
+
         Timeline t2 = new Timeline(new KeyFrame(Duration.millis(600),
-                new KeyValue(ball.layoutYProperty(), bounds.getMaxY()+ball.getRadius())));
+                new KeyValue(ballID.layoutYProperty(), bounds.getMaxY()+ballID.getRadius())));
         t2.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(actionEvent -> t2.play());

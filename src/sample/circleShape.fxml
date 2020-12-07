@@ -5,10 +5,10 @@
 
 <AnchorPane fx:id="circleRoot" prefHeight="448.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.circleShapeController">
    <children>
-      <Arc fx:id="arc1" fill="#8f0fff" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="20.0" />
-      <Arc fx:id="arc2" fill="#ff0181" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="90.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="20.0" />
-      <Arc fx:id="arc3" fill="#fae100"  layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="180.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="20.0" />
-      <Arc fx:id="arc4" fill="#32dbf0" layoutX="500.0" layoutY="154.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="270.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="20.0" />
+      <Arc fx:id="arc1" fill="#8f0fff" layoutX="500.0" layoutY="-246.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="20.0" />
+      <Arc fx:id="arc2" fill="#ff0181" layoutX="500.0" layoutY="-246.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="90.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="20.0" />
+      <Arc fx:id="arc3" fill="#fae100" layoutX="500.0" layoutY="-246.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="180.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="20.0" />
+      <Arc fx:id="arc4" fill="#32dbf0" layoutX="500.0" layoutY="-246.0" length="90.0" radiusX="75.0" radiusY="75.0" startAngle="270.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="20.0" />
       <Circle fx:id="innerPart" fill="#ffffff00" layoutX="499.0" layoutY="152.0" radius="66.0" stroke="TRANSPARENT" strokeType="INSIDE" />
 
    </children>

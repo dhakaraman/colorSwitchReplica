@@ -22,13 +22,13 @@ public class triangleShapeController extends Obstracle implements Initializable{
     @FXML
     AnchorPane trianglePane;
     @FXML
-    private Line tri1;
+    public Line tri1;
 
     @FXML
-    private Line tri2;
+    public Line tri2;
 
     @FXML
-    private Line tri3;
+    public Line tri3;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -72,27 +72,27 @@ public class triangleShapeController extends Obstracle implements Initializable{
     @Override
     public boolean checkColor(BallController ball) {
 
-        if(ball.ball.getFill().equals(tri1.getFill())){
-            if(tri2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        if(ball.ballID.getFill().equals(tri1.getFill())){
+            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(tri3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;
         }
-        else if(ball.ball.getFill().equals(tri2.getFill())){
-            if(tri1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        else if(ball.ballID.getFill().equals(tri2.getFill())){
+            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(tri3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;
         }
 
         else {
-            if(tri2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(tri1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;

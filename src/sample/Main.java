@@ -23,7 +23,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        addMusic();
+        //addMusic();
         Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
         primaryStage.setTitle("Color Switch");
@@ -32,7 +32,7 @@ public class Main extends Application {
     }
 
     public void addMusic() {
-        Media sound = new Media(getClass().getResource("/assets/achat.wav").toString());
+        Media sound = new Media(getClass().getResource("/assets.wav").toString());
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);

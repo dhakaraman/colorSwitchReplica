@@ -16,16 +16,16 @@ public class sqaureShapeController extends Obstracle implements Initializable {
     @FXML
     AnchorPane squareRoot;
     @FXML
-    private Line line1;
+    public Line line1;
 
     @FXML
-    private Line line2;
+    public Line line2;
 
     @FXML
-    private Line line3;
+    public Line line3;
 
     @FXML
-    private Line line4;
+    public Line line4;
 
     @FXML
     private Line line5;
@@ -68,42 +68,42 @@ public class sqaureShapeController extends Obstracle implements Initializable {
     @Override
     public boolean checkColor(BallController ball) {
 
-        if(ball.ball.getFill().equals(line1.getFill())){
-            if(line2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        if(ball.ballID.getFill().equals(line1.getFill())){
+            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
-                return true;
-            else
-                return false;
-        }
-        else if(ball.ball.getFill().equals(line2.getFill())){
-            if(line1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
-                return true;
-            if(line3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
-                return true;
-            if(line4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;
         }
-        else if(ball.ball.getFill().equals(line3.getFill())){
-            if(line2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+        else if(ball.ballID.getFill().equals(line2.getFill())){
+            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line4.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+                return true;
+            else
+                return false;
+        }
+        else if(ball.ballID.getFill().equals(line3.getFill())){
+            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+                return true;
+            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+                return true;
+            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;
         }
         else {
-            if(line2.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line3.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
-            if(line1.getBoundsInParent().intersects(ball.ball.getBoundsInParent()))
+            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             else
                 return false;
