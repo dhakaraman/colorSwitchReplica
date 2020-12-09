@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
 <AnchorPane fx:id="squareRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.sqaureShapeController">
    <children>
-      <Line fx:id="line1" endX="100.0" endY="100.0" layoutX="450.0" layoutY="-332.0" startY="100.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="line2" endX="100.0" fill="#8f0fff" layoutX="450.0" layoutY="-127.0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="line3" layoutX="450.0" layoutY="-229.0" startY="100.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="line4" endX="100.0" fill="BLACK" layoutX="450.0" layoutY="-229.0" startX="100.0" startY="100.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <ImageView fitHeight="47.0" fitWidth="30.0" layoutX="485.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/star.png" />
-         </image>
-      </ImageView>
+      <Line fx:id="line1" endX="-23.0" endY="134.0" layoutX="450.0" layoutY="68.0" startX="118.0" startY="134.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="line2" endX="118.0" fill="#8f0fff" layoutX="450.0" layoutY="68.0" startX="-18.0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="line3" endX="-23.0" endY="1.0" layoutX="450.0" layoutY="68.0" startX="-23.0" startY="129.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="line4" endX="123.0" endY="134.0" fill="BLACK" layoutX="450.0" layoutY="68.0" startX="123.0" startY="-1.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Polygon fx:id="sqrID" fill="#2197ff00" layoutX="450.0" layoutY="68.0" points="-18.0, 129.0, 118.0, 129.0, 118.0, 5.0, -18.0, 5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
