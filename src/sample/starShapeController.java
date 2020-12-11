@@ -25,6 +25,33 @@ public class starShapeController extends Obstracle implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //rotatingSpeed();
+    }
+
+    @Override
+    public boolean checkColor(BallController ball) {
+
+        if(ball.ballID.getLayoutY()<=star1.getLayoutY()-130){
+            star1.setLayoutY(1000);
+            star2.setLayoutY(1000);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    protected void movingSpeed() {
+        double dist = star1.getLayoutY();
+        if(dist>800){
+            dist = -800;
+        }
+        dist++;
+        star1.setLayoutY(dist);
+        star2.setLayoutY(dist);
+    }
+
+    @Override
+    protected void rotatingSpeed() {
         Rotate r1 = new Rotate();
         Rotate r2 = new Rotate();
 
@@ -36,24 +63,9 @@ public class starShapeController extends Obstracle implements Initializable {
         r2.setPivotY(300);
         star2.getTransforms().add(r2);
 
-        //timeset(r1,r2);
-
+        helper(r1);
+        helper(r2);
     }
 
-    @Override
-    public boolean checkColor(BallController ball) {
-        return false;
-    }
 
-    private void timeset(Rotate r1, Rotate r2) {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r1.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r1.angleProperty(), 36000)));
-        timeline.play();
-
-        Timeline t2 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r2.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r2.angleProperty(), 36000)));
-        t2.play();
-    }
 }

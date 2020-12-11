@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
@@ -17,5 +18,6 @@
             <Image url="@../assets/Circle111.png" />
          </image>
       </ImageView>
+      <TextArea fx:id="list1" layoutX="29.0" layoutY="77.0" prefHeight="71.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

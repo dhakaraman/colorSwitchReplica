@@ -11,6 +11,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,6 +41,8 @@ public class pauseMenuController  implements Initializable {
 
     @FXML
     private ImageView exitGame;
+
+    GamePlayController obj;
 
     @FXML
     void exitGame(MouseEvent event) {
@@ -78,5 +83,38 @@ public class pauseMenuController  implements Initializable {
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         pauseRoot.getChildren().setAll(pane);
     }
+    @FXML
+    void resumeGame(MouseEvent event) throws Exception{
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
+        pauseRoot.getChildren().setAll(pane);
+//
+//        FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
+//        GamePlayController temp;
+//        GamePlayController obj = deserialize();
+//        //System.out.println(obj.a1);
+//        //load.getController().a1 = obj.a1;
+////        load.setController(obj);
+//        AnchorPane pane = load.load();
+//        temp = load.getController();
+//        //temp.a1= obj.a1;
+//
+//        pauseRoot.getChildren().setAll(pane);
+//
+//        //AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
+//        //pauseRoot.getChildren().setAll(pane);
+    }
 
+
+    public static GamePlayController deserialize() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = null;
+        GamePlayController s1;
+        try {
+            in = new ObjectInputStream(
+                    new FileInputStream("out.txt"));
+             s1 = (GamePlayController) in.readObject();
+        } finally {
+            in.close();
+        }
+        return s1;
+    }
 }

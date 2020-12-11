@@ -18,7 +18,7 @@ import java.io.*;
 import java.net.URL;
 
 
-public class Main extends Application {
+public class Main extends Application implements Serializable{
     public static MediaPlayer mediaPlayer;
 
     @Override

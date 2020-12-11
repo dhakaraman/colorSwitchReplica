@@ -32,56 +32,9 @@ public class sqaureShapeController extends Obstracle implements Initializable {
     @FXML
     public Line line4;
 
-    @FXML
-    private Line line5;
-    
-    private void timeset(Rotate rotation, Rotate r2) {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(rotation.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(rotation.angleProperty(), 36000)));
-        timeline.play();
-
-        Timeline t2 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r2.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r2.angleProperty(), 36000)));
-        t2.play();
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Rotate rotation = new Rotate();
-        Rotate r2 = new Rotate();
-        Rotate r3 = new Rotate();
-        Rotate r4 = new Rotate();
-
-        Rotate r5 = new Rotate();
-
-        rotation.setPivotX(51);
-        rotation.setPivotY(51);
-        line1.getTransforms().add(rotation);
-        r2.setPivotX(51);
-        r2.setPivotY(51);
-        line2.getTransforms().add(r2);
-        r3.setPivotX(51);
-        r3.setPivotY(51);
-        line3.getTransforms().add(r3);
-        r4.setPivotX(51);
-        r4.setPivotY(51);
-        line4.getTransforms().add(r4);
-
-
-        r5.setPivotX(51);
-        r5.setPivotY(51);
-        sqrID.getTransforms().add(r5);
-
-        Timeline t2 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r5.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r5.angleProperty(), 36000)));
-        t2.play();
-
-
-        timeset(rotation, r2);
-        timeset(r3, r4);
+        rotatingSpeed();
     }
 
     @Override
@@ -128,4 +81,52 @@ public class sqaureShapeController extends Obstracle implements Initializable {
                 return false;
         }
     }
+
+    @Override
+    protected void movingSpeed() {
+        double dist = line1.getLayoutY();
+        if(dist>800){
+            dist = -800;
+        }
+        dist++;
+        line1.setLayoutY(dist);
+        line2.setLayoutY(dist);
+        line3.setLayoutY(dist);
+        line4.setLayoutY(dist);
+        sqrID.setLayoutY(dist);
+    }
+
+    @Override
+    protected void rotatingSpeed() {
+        Rotate r1 = new Rotate();
+        Rotate r2 = new Rotate();
+        Rotate r3 = new Rotate();
+        Rotate r4 = new Rotate();
+        Rotate r5 = new Rotate();
+
+        r1.setPivotX(51);
+        r1.setPivotY(51);
+        line1.getTransforms().add(r1);
+        r2.setPivotX(51);
+        r2.setPivotY(51);
+        line2.getTransforms().add(r2);
+        r3.setPivotX(51);
+        r3.setPivotY(51);
+        line3.getTransforms().add(r3);
+        r4.setPivotX(51);
+        r4.setPivotY(51);
+        line4.getTransforms().add(r4);
+
+        r5.setPivotX(51);
+        r5.setPivotY(51);
+        sqrID.getTransforms().add(r5);
+
+        helper(r1);
+        helper(r2);
+        helper(r3);
+        helper(r4);
+        helper(r5);
+
+    }
+
 }

@@ -5,9 +5,6 @@ import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
-
-import javax.swing.text.html.ImageView;
 
 public class circleShapeController extends Obstracle {
 
@@ -30,57 +27,13 @@ public class circleShapeController extends Obstracle {
     @FXML
     private void initialize() {
 
-        Rotate r1 = new Rotate();
-        Rotate r2 = new Rotate();
-        Rotate r3 = new Rotate();
-        Rotate r4 = new Rotate();
-
-        r1.setPivotX(0);
-        r1.setPivotY(0);
-        arc1.getTransforms().add(r1);
-
-        r1.setPivotX(0);
-        r1.setPivotY(0);
-        arc2.getTransforms().add(r2);
-
-        r1.setPivotX(0);
-        r1.setPivotY(0);
-        arc3.getTransforms().add(r3);
-
-        r1.setPivotX(0);
-        r1.setPivotY(0);
-        arc4.getTransforms().add(r4);
-
-        timeset(r1, r2, r3, r4);
+        rotatingSpeed();
 
     }
 
-    private void timeset(Rotate r1, Rotate r2, Rotate r3, Rotate r4) {
-        Timeline t1 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r1.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r1.angleProperty(), 36000)));
-        t1.play();
-
-        Timeline t2 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r2.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r2.angleProperty(), 36000)));
-        t2.play();
-
-        Timeline t3 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r3.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r3.angleProperty(), 36000)));
-        t3.play();
-
-        Timeline t4 = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r4.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r4.angleProperty(), 36000)));
-        t4.play();
-
-    }
 
     @Override
     public boolean checkColor(BallController ball) {
-        //System.out.println(arc1.getLayoutY());
 
         if(ball.ballID.getFill().equals(arc1.getFill())){
             if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -132,5 +85,48 @@ public class circleShapeController extends Obstracle {
         }
 
 
+    }
+
+    @Override
+    protected void movingSpeed() {
+        double dist = arc1.getLayoutY();
+        if(dist>800){
+            dist = -800;
+        }
+        dist++;
+        arc1.setLayoutY(dist);
+        arc2.setLayoutY(dist);
+        arc3.setLayoutY(dist);
+        arc4.setLayoutY(dist);
+        innerPart.setLayoutY(dist);
+    }
+
+    @Override
+    protected void rotatingSpeed() {
+        Rotate r1 = new Rotate();
+        Rotate r2 = new Rotate();
+        Rotate r3 = new Rotate();
+        Rotate r4 = new Rotate();
+
+        r1.setPivotX(0);
+        r1.setPivotY(0);
+        arc1.getTransforms().add(r1);
+
+        r1.setPivotX(0);
+        r1.setPivotY(0);
+        arc2.getTransforms().add(r2);
+
+        r1.setPivotX(0);
+        r1.setPivotY(0);
+        arc3.getTransforms().add(r3);
+
+        r1.setPivotX(0);
+        r1.setPivotY(0);
+        arc4.getTransforms().add(r4);
+
+        helper(r1);
+        helper(r2);
+        helper(r3);
+        helper(r4);
     }
 }
