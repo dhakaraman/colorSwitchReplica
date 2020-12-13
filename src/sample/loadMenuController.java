@@ -16,7 +16,7 @@ public class loadMenuController implements Initializable {
     private AnchorPane loadRoot;
 
     @FXML
-    private Button BackBuuton1;
+    private Button BackButon1;
 
     @FXML
     private ImageView BackButton;

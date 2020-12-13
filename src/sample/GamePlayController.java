@@ -60,7 +60,6 @@ public class GamePlayController implements Serializable {
 
     public void initialize() throws Exception{
 
-
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circleID);
         transition1.setByAngle(3600);
         transition1.setCycleCount(50);
@@ -156,7 +155,8 @@ public class GamePlayController implements Serializable {
             public void handle(long now) {
                 try {
                     update();
-                } catch (Exception e) {
+                }
+                catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -198,6 +198,13 @@ public class GamePlayController implements Serializable {
         if(color || color2 || color3 || color4){
             AnchorPane pane= FXMLLoader.load(getClass().getResource("GameOver.fxml"));
             playRoot.getChildren().setAll(pane);
+            FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
+            AnchorPane Pane = load.load();
+            GameOverController GOobj=load.getController();
+            playRoot.getChildren().addAll(Pane);
+            String temp = Integer.toString(score);
+            GOobj.textField.setText(temp);
+
         }
         if(color5 || color6 || color7 || color8){
             System.out.println(score);
@@ -215,7 +222,6 @@ public class GamePlayController implements Serializable {
             Collections.shuffle(Arrays.asList(arr));
             ball.ballID.setFill(Paint.valueOf(arr[0]));
         }
-
     }
 
     void resetY(){

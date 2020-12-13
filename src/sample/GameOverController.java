@@ -34,6 +34,8 @@ public class GameOverController{
 
     public void initialize() {
 
+        //textField.setText("dfdf");
+
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
         transition1.setByAngle(3600);
         transition1.setCycleCount(50);
