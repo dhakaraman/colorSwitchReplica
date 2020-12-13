@@ -85,23 +85,22 @@ public class pauseMenuController  implements Initializable {
     }
     @FXML
     void resumeGame(MouseEvent event) throws Exception{
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
-        pauseRoot.getChildren().setAll(pane);
-//
-//        FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
-//        GamePlayController temp;
-//        GamePlayController obj = deserialize();
-//        //System.out.println(obj.a1);
-//        //load.getController().a1 = obj.a1;
-////        load.setController(obj);
-//        AnchorPane pane = load.load();
-//        temp = load.getController();
-//        //temp.a1= obj.a1;
-//
+//        Main.deserialize();
+//        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
 //        pauseRoot.getChildren().setAll(pane);
-//
-//        //AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
-//        //pauseRoot.getChildren().setAll(pane);
+
+        FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
+        GamePlayController temp;
+        GamePlayController obj = deserialize();
+        AnchorPane pane = load.load();
+        temp = load.getController();
+        temp.initData(obj.a1, obj.a2, obj.a3, obj.a4);
+        //temp.a1= obj.a1;
+
+        pauseRoot.getChildren().setAll(pane);
+
+        //AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
+        //pauseRoot.getChildren().setAll(pane);
     }
 
 

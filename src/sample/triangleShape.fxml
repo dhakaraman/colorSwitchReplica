@@ -5,9 +5,9 @@
 
 <AnchorPane fx:id="trianglePane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.triangleShapeController">
    <children>
-      <Line fx:id="tri1" endX="79.0" endY="-46.0" layoutX="410.0" layoutY="87.0" startX="-16.0" startY="135.0" stroke="#e40693" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="tri2" endX="196.0" endY="129.0" layoutX="410.0" layoutY="87.0" startX="-15.0" startY="140.0" stroke="#caf50a" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="tri3" endX="84.0" endY="-45.0" fill="#8f0fff" layoutX="410.0" layoutY="87.0" startX="201.0" startY="131.0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Polygon fx:id="innerTri" fill="#2164ff00" layoutX="410.0" layoutY="87.0" points="-14.0, 140.0, 195.0, 124.0, 79.0, -50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Line fx:id="tri1" endX="53.0" endY="-115.0" fill="#32dbf0" layoutX="440.0" layoutY="140.0" startX="-42.0" startY="70.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="tri2" endX="164.0" endY="71.0" fill="#ff0181" layoutX="440.0" layoutY="140.0" startX="-41.0" startY="71.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="tri3" endX="54.0" endY="-114.0" fill="#fae100" layoutX="440.0" layoutY="140.0" startX="165.0" startY="70.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Polygon fx:id="innerTri" fill="#2167ff97" layoutX="440.0" layoutY="140.0" opacity="0.0" points="-39.0, 66.0, 159.0, 66.0, 52.0, -111.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

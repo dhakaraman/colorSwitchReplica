@@ -19,15 +19,15 @@ public class BallController  {
     public static MediaPlayer mediaPlayer;
 
     @FXML
-    AnimationTimer timer;
+    transient AnimationTimer timer;
 
     @FXML
-    public AnchorPane BallRoot;
+    transient public AnchorPane BallRoot;
 
     @FXML
-    public Circle ballID;
+    transient  public Circle ballID;
 
-    circleShapeController obj;
+    transient circleShapeController obj;
 
 
     public void initialize() throws Exception{
@@ -36,7 +36,7 @@ public class BallController  {
 
     @FXML
     public void play(ActionEvent event) throws IOException {
-        addMusic();
+        //addMusic();
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ballID.layoutYProperty(), ballID.getLayoutY()-50)));

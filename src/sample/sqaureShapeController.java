@@ -104,21 +104,21 @@ public class sqaureShapeController extends Obstracle implements Initializable {
         Rotate r4 = new Rotate();
         Rotate r5 = new Rotate();
 
-        r1.setPivotX(51);
-        r1.setPivotY(51);
+        r1.setPivotX(50);
+        r1.setPivotY(5);
         line1.getTransforms().add(r1);
-        r2.setPivotX(51);
-        r2.setPivotY(51);
+        r2.setPivotX(50);
+        r2.setPivotY(5);
         line2.getTransforms().add(r2);
-        r3.setPivotX(51);
-        r3.setPivotY(51);
+        r3.setPivotX(50);
+        r3.setPivotY(5);
         line3.getTransforms().add(r3);
-        r4.setPivotX(51);
-        r4.setPivotY(51);
+        r4.setPivotX(50);
+        r4.setPivotY(5);
         line4.getTransforms().add(r4);
 
-        r5.setPivotX(51);
-        r5.setPivotY(51);
+        r5.setPivotX(50);
+        r5.setPivotY(5);
         sqrID.getTransforms().add(r5);
 
         helper(r1);

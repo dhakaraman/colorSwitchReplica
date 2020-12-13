@@ -112,7 +112,6 @@ public class MainPageController implements Initializable{
 
     }
 
-
     @FXML
     void startGame(MouseEvent event) throws Exception{
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));

@@ -32,8 +32,9 @@ public class starShapeController extends Obstracle implements Initializable {
     public boolean checkColor(BallController ball) {
 
         if(ball.ballID.getLayoutY()<=star1.getLayoutY()-130){
-            star1.setLayoutY(1000);
-            star2.setLayoutY(1000);
+            double dist = star1.getLayoutY()-1600;
+            star1.setLayoutY(dist);
+            star2.setLayoutY(dist);
             return true;
         }
         return false;

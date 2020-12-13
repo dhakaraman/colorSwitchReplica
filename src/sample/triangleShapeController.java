@@ -90,20 +90,20 @@ public class triangleShapeController extends Obstracle implements Initializable{
         Rotate r3 = new Rotate();
         Rotate r4 = new Rotate();
 
-        r1.setPivotX(100);
-        r1.setPivotY(70);
+        r1.setPivotX(64);
+        r1.setPivotY(0);
         tri1.getTransforms().add(r1);
 
-        r2.setPivotX(100);
-        r2.setPivotY(70);
+        r2.setPivotX(64);
+        r2.setPivotY(0);
         tri2.getTransforms().add(r2);
 
-        r3.setPivotX(100);
-        r3.setPivotY(70);
+        r3.setPivotX(64);
+        r3.setPivotY(0);
         tri3.getTransforms().add(r3);
 
-        r4.setPivotX(100);
-        r4.setPivotY(70);
+        r4.setPivotX(64);
+        r4.setPivotY(0);
         innerTri.getTransforms().add(r4);
 
         helper(r1);

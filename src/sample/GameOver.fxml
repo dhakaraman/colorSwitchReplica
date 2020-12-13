@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="OverRoot" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameOverController">
    <children>
@@ -14,20 +12,24 @@
             <Image url="@../assets/GameOverBackGroundAi.png" />
          </image>
       </ImageView>
-      <ImageView  fitHeight="40.0" fitWidth="40.0" layoutX="434.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle1" fitHeight="40.0" fitWidth="40.0" layoutX="434.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/Circle111.png" />
+            <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView  fitHeight="41.0" fitWidth="40.0" layoutX="359.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle2" fitHeight="41.0" fitWidth="40.0" layoutX="359.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/Circle111.png" />
+            <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="235.0" layoutX="406.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#newGame"/>
-      <ImageView fitHeight="67.0" fitWidth="247.0" layoutX="415.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#mainMenu" />
-      <ImageView fitHeight="67.0" fitWidth="235.0" layoutX="406.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#exitGame"/>
-      <ListView layoutX="528.0" layoutY="160.0" opacity="0.4" prefHeight="48.0" prefWidth="103.0" />
+      <ImageView fitHeight="79.0" fitWidth="235.0" layoutX="406.0" layoutY="232.0" onMouseClicked="#newGame" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="67.0" fitWidth="247.0" layoutX="415.0" layoutY="320.0" onMouseClicked="#mainMenu" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="67.0" fitWidth="235.0" layoutX="406.0" layoutY="400.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="textField" layoutX="539.0" layoutY="148.0" text="0" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
 
 
 

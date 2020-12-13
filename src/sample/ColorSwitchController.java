@@ -21,6 +21,14 @@ public class ColorSwitchController extends Obstracle {
 
     @Override
     public boolean checkColor(BallController ball) {
+        if(ball.ballID.getLayoutY()<=arc1.getLayoutY()){
+            double dist = arc1.getLayoutY()-1600;
+            arc1.setLayoutY(dist);
+            arc2.setLayoutY(dist);
+            arc3.setLayoutY(dist);
+            arc4.setLayoutY(dist);
+            return true;
+        }
         return false;
     }
 

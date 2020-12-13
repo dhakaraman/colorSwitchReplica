@@ -5,12 +5,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
-import javax.swing.text.html.ImageView;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -25,20 +28,23 @@ public class GameOverController{
     @FXML
     public ImageView circle2;
 
+    @FXML
+    public Label textField;
+
 
     public void initialize() {
 
-//        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
-//        transition1.setByAngle(3600);
-//        transition1.setCycleCount(50);
-//        transition1.setAutoReverse(true);
-//        transition1.play();
-//
-//        RotateTransition transition2 = new RotateTransition(Duration.seconds(30), circle2);
-//        transition1.setByAngle(3600);
-//        transition1.setCycleCount(50);
-//        transition1.setAutoReverse(true);
-//        transition1.play();
+        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
+        transition1.setByAngle(3600);
+        transition1.setCycleCount(50);
+        transition1.setAutoReverse(true);
+        transition1.play();
+
+        RotateTransition transition2 = new RotateTransition(Duration.seconds(30), circle2);
+        transition2.setByAngle(3600);
+        transition2.setCycleCount(50);
+        transition2.setAutoReverse(true);
+        transition2.play();
     }
 
     public void exitGame(MouseEvent event) {

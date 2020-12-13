@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="playRoot" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePlayController">
    <children>
@@ -13,11 +14,15 @@
       </ImageView>
       <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <ImageView fx:id="a" fitHeight="53.0" fitWidth="47.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circleID" fitHeight="53.0" fitWidth="47.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Circle111.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="list1" layoutX="29.0" layoutY="77.0" prefHeight="71.0" prefWidth="200.0" />
+      <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="47.0" prefWidth="115.0" text="0" textFill="#fffafa">
+         <font>
+            <Font size="74.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
