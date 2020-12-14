@@ -117,6 +117,7 @@ public class MainPageController implements Initializable{
 
     @FXML
     void startGame(MouseEvent event) throws Exception{
+        //GamePlayController oj = new GamePlayController(-200);
         addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         mainRoot.getChildren().setAll(pane);

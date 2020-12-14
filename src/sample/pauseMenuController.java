@@ -99,17 +99,11 @@ public class pauseMenuController  implements Initializable {
 //        pauseRoot.getChildren().setAll(pane);
         addMusic("/Sound Effects/button.wav");
         FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
-        GamePlayController temp;
-        GamePlayController obj = deserialize();
-        AnchorPane pane = load.load();
-        temp = load.getController();
-        temp.initData(obj.a1, obj.a2, obj.a3, obj.a4);
-        //temp.a1= obj.a1;
+        AnchorPane Pane = load.load();
+        GamePlayController GPobj=load.getController();
+        pauseRoot.getChildren().setAll(Pane);
+        GPobj.deserialize();
 
-        pauseRoot.getChildren().setAll(pane);
-
-        //AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
-        //pauseRoot.getChildren().setAll(pane);
     }
 
     private void addMusic(String fileName){
@@ -121,17 +115,4 @@ public class pauseMenuController  implements Initializable {
         mediaPlayer.play();
     }
 
-
-    public static GamePlayController deserialize() throws IOException, ClassNotFoundException {
-        ObjectInputStream in = null;
-        GamePlayController s1;
-        try {
-            in = new ObjectInputStream(
-                    new FileInputStream("out.txt"));
-             s1 = (GamePlayController) in.readObject();
-        } finally {
-            in.close();
-        }
-        return s1;
-    }
 }

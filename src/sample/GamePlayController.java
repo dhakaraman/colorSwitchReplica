@@ -12,8 +12,6 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javax.swing.text.html.ListView;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import java.awt.*;
@@ -23,6 +21,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class GamePlayController implements Serializable {
+
     @FXML
     transient AnimationTimer timer;
 
@@ -40,24 +39,19 @@ public class GamePlayController implements Serializable {
 
     @FXML
     transient TextArea textArea;
-
     transient BallController ball;
-
     transient circleShapeController obj;
-
     transient sqaureShapeController obj1;
-
     transient triangleShapeController obj2;
-
     transient LineShapeController obj3;
-
     transient ColorSwitchController CSobj1,CSobj2,CSobj3,CSobj4;
-
     transient public int score=0;
-
     transient starShapeController starObj1, starObj2, starObj3, starObj4;
 
-    public double a1,a2,a3,a4;
+    ArrayList<Double> obstacles = new ArrayList<>();
+    ArrayList<Double> colorSwitch = new ArrayList<>();
+    ArrayList<Double> stars = new ArrayList<>();
+    double ballPos;
 
     public void initialize() throws Exception{
 
@@ -148,7 +142,8 @@ public class GamePlayController implements Serializable {
         CSobj4=load13.getController();
         playRoot.getChildren().addAll(obstraclePane12);
 
-        resetY();
+        resetY(-200);
+        //deserialize();
 
         timer = new AnimationTimer() {
             @Override
@@ -164,6 +159,7 @@ public class GamePlayController implements Serializable {
         };
         timer.start();
     }
+
 
     void update() throws Exception{
         //System.out.println(a1+" "+a2+" "+a3+" "+a4);
@@ -202,12 +198,15 @@ public class GamePlayController implements Serializable {
 
             addMusic("/Sound Effects/breakball1.wav");
             timer.stop();
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("GameOver.fxml"));
-            playRoot.getChildren().setAll(pane);
+
             FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
+
+//            GameOverController controller = new GameOverController();
+//            load.setController(controller);
+
             AnchorPane Pane = load.load();
             GameOverController GOobj=load.getController();
-            playRoot.getChildren().addAll(Pane);
+            playRoot.getChildren().setAll(Pane);
             String temp = Integer.toString(score);
             GOobj.textField.setText(temp);
         }
@@ -233,20 +232,21 @@ public class GamePlayController implements Serializable {
         }
     }
 
-    void resetY(){
+    public void resetY(int pos){
 
         ArrayList<Integer> mylist = new ArrayList<Integer>();
-        mylist.add(-200);
-        mylist.add(-600);
-        mylist.add(-1000);
-        mylist.add(-1400);
+        mylist.add(pos);
+        mylist.add(pos-400);
+        mylist.add(pos-800);
+        mylist.add(pos-1200);
 
-        Collections.shuffle(mylist);
+        //Collections.shuffle(mylist);
 
         obj.arc1.setLayoutY(mylist.get(0));
         obj.arc2.setLayoutY(mylist.get(0));
         obj.arc3.setLayoutY(mylist.get(0));
         obj.arc4.setLayoutY(mylist.get(0));
+        obj.innerPart.setLayoutY(mylist.get(0));
         starObj1.star1.setLayoutY(mylist.get(0)+160);
         starObj1.star2.setLayoutY(mylist.get(0)+160);
         CSobj1.arc1.setLayoutY(mylist.get(0)+200);
@@ -294,6 +294,67 @@ public class GamePlayController implements Serializable {
 
     }
 
+    public void resetY2(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr){
+
+        obj.arc1.setLayoutY(obs.get(0));
+        obj.arc2.setLayoutY(obs.get(0));
+        obj.arc3.setLayoutY(obs.get(0));
+        obj.arc4.setLayoutY(obs.get(0));
+        obj.innerPart.setLayoutY(obs.get(0));
+        starObj1.star1.setLayoutY(star.get(0));
+        starObj1.star2.setLayoutY(star.get(0));
+        CSobj1.arc1.setLayoutY(col.get(0));
+        CSobj1.arc2.setLayoutY(col.get(0));
+        CSobj1.arc3.setLayoutY(col.get(0));
+        CSobj1.arc4.setLayoutY(col.get(0));
+
+        obj1.line1.setLayoutY(obs.get(1));
+        obj1.line2.setLayoutY(obs.get(1));
+        obj1.line3.setLayoutY(obs.get(1));
+        obj1.line4.setLayoutY(obs.get(1));
+        obj1.sqrID.setLayoutY(obs.get(1));
+        starObj2.star1.setLayoutY(star.get(1));
+        starObj2.star2.setLayoutY(star.get(1));
+        CSobj2.arc1.setLayoutY(col.get(1));
+        CSobj2.arc2.setLayoutY(col.get(1));
+        CSobj2.arc3.setLayoutY(col.get(1));
+        CSobj2.arc4.setLayoutY(col.get(1));
+
+        obj2.tri1.setLayoutY(obs.get(2));
+        obj2.tri2.setLayoutY(obs.get(2));
+        obj2.tri3.setLayoutY(obs.get(2));
+        obj2.innerTri.setLayoutY(obs.get(2));
+        starObj3.star1.setLayoutY(star.get(2));
+        starObj3.star2.setLayoutY(star.get(2));
+        CSobj3.arc1.setLayoutY(col.get(2));
+        CSobj3.arc2.setLayoutY(col.get(2));
+        CSobj3.arc3.setLayoutY(col.get(2));
+        CSobj3.arc4.setLayoutY(col.get(2));
+
+        obj3.line1.setLayoutY(obs.get(3));
+        obj3.line2.setLayoutY(obs.get(3));
+        obj3.line3.setLayoutY(obs.get(3));
+        obj3.line4.setLayoutY(obs.get(3));
+        obj3.line5.setLayoutY(obs.get(3));
+        obj3.line6.setLayoutY(obs.get(3));
+        obj3.line7.setLayoutY(obs.get(3));
+        obj3.line8.setLayoutY(obs.get(3));
+        starObj4.star1.setLayoutY(star.get(3));
+        starObj4.star2.setLayoutY(star.get(3));
+        CSobj4.arc1.setLayoutY(col.get(3));
+        CSobj4.arc2.setLayoutY(col.get(3));
+        CSobj4.arc3.setLayoutY(col.get(3));
+        CSobj4.arc4.setLayoutY(col.get(3));
+
+        ball.ballID.setLayoutY(ballPos);
+        score = scr;
+        String temp = Integer.toString(scr);
+        textField.setText(temp);
+
+    }
+
+
+
     @FXML
     void pauseGame(MouseEvent event) throws Exception{
         serialize();
@@ -313,28 +374,46 @@ public class GamePlayController implements Serializable {
     }
 
     public void serialize() throws IOException {
-        a1 = obj.arc1.getLayoutY();
-        a2 = obj.arc2.getLayoutY();
-        a3 = obj.arc3.getLayoutY();
-        a4 = obj.arc4.getLayoutY();
+        obstacles.add(obj.arc1.getLayoutY());//circle
+        obstacles.add(obj1.line1.getLayoutY());//square
+        obstacles.add(obj2.tri1.getLayoutY());//triangle
+        obstacles.add(obj3.line1.getLayoutY());//lines
 
+        colorSwitch.add(CSobj1.arc1.getLayoutY());
+        colorSwitch.add(CSobj2.arc1.getLayoutY());
+        colorSwitch.add(CSobj3.arc1.getLayoutY());
+        colorSwitch.add(CSobj4.arc1.getLayoutY());
+
+        stars.add(starObj1.star1.getLayoutY());
+        stars.add(starObj2.star1.getLayoutY());
+        stars.add(starObj3.star1.getLayoutY());
+        stars.add(starObj4.star1.getLayoutY());
+
+
+        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score);
         ObjectOutputStream out = null;
         try {
              out = new ObjectOutputStream (new FileOutputStream("out.txt"));
-             out.writeObject(this);
+             out.writeObject(oj);
              }
         finally {
              out.close();
              }
     }
+    public void deserialize() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = null;
+        DataTable s1;
+        try {
+            in = new ObjectInputStream(
+                    new FileInputStream("out.txt"));
+            s1 = (DataTable) in.readObject();
+            resetY2(s1.obstacles,s1.colorSwitch,s1.stars,s1.ballPos,s1.score);
+        } finally {
+            in.close();
+        }
 
-    @FXML
-    public void initData(double a1,double a2, double a3, double a4){
-        this.a1 = a1;
-        this.a2 = a2;
-        this.a3 = a3;
-        this.a4 = a4;
     }
+
 
 
 }

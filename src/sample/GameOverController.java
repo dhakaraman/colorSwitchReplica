@@ -38,7 +38,6 @@ public class GameOverController{
 
 
     public void initialize() {
-        System.out.println(temp);
 
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
         transition1.setByAngle(3600);
