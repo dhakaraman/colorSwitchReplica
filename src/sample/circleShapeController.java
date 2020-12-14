@@ -34,10 +34,12 @@ public class circleShapeController extends Obstracle {
 
     @Override
     public boolean checkColor(BallController ball) {
+        //System.out.println("I am in circle");
 
         if(ball.ballID.getFill().equals(arc1.getFill())){
-            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
+            }
             if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
@@ -48,8 +50,9 @@ public class circleShapeController extends Obstracle {
                 return false;
         }
         else if(ball.ballID.getFill().equals(arc2.getFill())){
-            if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+            if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
+            }
             if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
@@ -60,8 +63,9 @@ public class circleShapeController extends Obstracle {
                 return false;
         }
         else if(ball.ballID.getFill().equals(arc3.getFill())){
-            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
+            }
             if(arc1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
@@ -71,9 +75,10 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-        else{
-            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
+        else if(ball.ballID.getFill().equals(arc4.getFill())){
+            if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
+            }
             if(arc3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
                 return true;
             }
@@ -83,7 +88,9 @@ public class circleShapeController extends Obstracle {
             else
                 return false;
         }
-
+        else{
+            return false;
+        }
 
     }
 

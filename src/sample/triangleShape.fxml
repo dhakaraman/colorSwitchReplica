@@ -8,6 +8,6 @@
       <Line fx:id="tri1" endX="53.0" endY="-115.0" fill="#32dbf0" layoutX="440.0" layoutY="140.0" startX="-42.0" startY="70.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="tri2" endX="164.0" endY="71.0" fill="#ff0181" layoutX="440.0" layoutY="140.0" startX="-41.0" startY="71.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="tri3" endX="54.0" endY="-114.0" fill="#fae100" layoutX="440.0" layoutY="140.0" startX="165.0" startY="70.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Polygon fx:id="innerTri" fill="#2167ff97" layoutX="440.0" layoutY="140.0" opacity="0.0" points="-39.0, 66.0, 159.0, 66.0, 52.0, -111.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Polygon fx:id="innerTri" fill="#0d4dd689" layoutX="440.0" layoutY="140.0" opacity="0.0" points="-39.0, 66.0, 159.0, 66.0, 52.0, -111.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

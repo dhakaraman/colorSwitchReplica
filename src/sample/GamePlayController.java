@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
@@ -14,7 +16,6 @@ import javafx.scene.control.TextField;
 import javax.swing.text.html.ListView;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -81,7 +82,6 @@ public class GamePlayController implements Serializable {
         AnchorPane obstraclePane10;
         AnchorPane obstraclePane11;
         AnchorPane obstraclePane12;
-
 
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
@@ -155,6 +155,7 @@ public class GamePlayController implements Serializable {
             public void handle(long now) {
                 try {
                     update();
+                    //MovingObstacles();
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -170,32 +171,37 @@ public class GamePlayController implements Serializable {
         boolean color9=false,color10=false,color11=false,color12=false;
         boolean color=false,color2=false,color3=false,color4=false,color5=false,color6=false,color7=false,color8=false;
         if(ball.ballID.getLayoutY()<400) {
+
             obj.movingSpeed();
-            color = obj.checkColor(ball);
             obj2.movingSpeed();
-            color2 = obj2.checkColor(ball);
             obj3.movingSpeed();
-            color3 = obj3.checkColor(ball);
             obj1.movingSpeed();
-            color4 = obj1.checkColor(ball);
             starObj1.movingSpeed();
             starObj2.movingSpeed();
             starObj3.movingSpeed();
             starObj4.movingSpeed();
-            color5 = starObj1.checkColor(ball);
-            color6 = starObj2.checkColor(ball);
-            color7 = starObj3.checkColor(ball);
-            color8 = starObj4.checkColor(ball);
             CSobj1.movingSpeed();
             CSobj2.movingSpeed();
             CSobj3.movingSpeed();
             CSobj4.movingSpeed();
-            color9 = CSobj1.checkColor(ball);
-            color10 = CSobj2.checkColor(ball);
-            color11 = CSobj3.checkColor(ball);
-            color12 = CSobj4.checkColor(ball);
+
         }
+        color = obj.checkColor(ball);
+        color2 = obj2.checkColor(ball);
+        color3 = obj3.checkColor(ball);
+        color4 = obj1.checkColor(ball);
+        color5 = starObj1.checkColor(ball);
+        color6 = starObj2.checkColor(ball);
+        color7 = starObj3.checkColor(ball);
+        color8 = starObj4.checkColor(ball);
+        color9 = CSobj1.checkColor(ball);
+        color10 = CSobj2.checkColor(ball);
+        color11 = CSobj3.checkColor(ball);
+        color12 = CSobj4.checkColor(ball);
         if(color || color2 || color3 || color4){
+
+            addMusic("/Sound Effects/breakball1.wav");
+            timer.stop();
             AnchorPane pane= FXMLLoader.load(getClass().getResource("GameOver.fxml"));
             playRoot.getChildren().setAll(pane);
             FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
@@ -204,15 +210,18 @@ public class GamePlayController implements Serializable {
             playRoot.getChildren().addAll(Pane);
             String temp = Integer.toString(score);
             GOobj.textField.setText(temp);
-
         }
         if(color5 || color6 || color7 || color8){
-            System.out.println(score);
             score++;
             String temp = Integer.toString(score);
             textField.setText(temp);
         }
-        if(color9 || color10 || color12){
+        if(color9){
+            String[] arr = new String[]{"#8f0fff","#ff0586","#fae100","#32e0f0"};
+            Collections.shuffle(Arrays.asList(arr));
+            ball.ballID.setFill(Paint.valueOf(arr[0]));
+        }
+        else if(color10 || color12){
             String[] arr = new String[]{"#8f0fff","#ff0586","#fae100","#32e0f0"};
             Collections.shuffle(Arrays.asList(arr));
             ball.ballID.setFill(Paint.valueOf(arr[0]));
@@ -289,8 +298,18 @@ public class GamePlayController implements Serializable {
     void pauseGame(MouseEvent event) throws Exception{
         serialize();
         timer.stop();
+        addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
         playRoot.getChildren().setAll(pane);
+    }
+
+    private void addMusic(String fileName){
+        Media sound = new Media(getClass().getResource(fileName).toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setStartTime(Duration.seconds(0));
+        mediaPlayer.setStopTime(Duration.seconds(1));
+        mediaPlayer.play();
     }
 
     public void serialize() throws IOException {

@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.transform.Rotate;
@@ -35,6 +37,7 @@ public class starShapeController extends Obstracle implements Initializable {
             double dist = star1.getLayoutY()-1600;
             star1.setLayoutY(dist);
             star2.setLayoutY(dist);
+            addMusic();
             return true;
         }
         return false;
@@ -66,6 +69,15 @@ public class starShapeController extends Obstracle implements Initializable {
 
         helper(r1);
         helper(r2);
+    }
+
+    public void addMusic() {
+        Media sound = new Media(getClass().getResource("/Sound Effects/star.wav").toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setStartTime(Duration.seconds(0));
+        mediaPlayer.setStopTime(Duration.seconds(1));
+        mediaPlayer.play();
     }
 
 

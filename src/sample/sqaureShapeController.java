@@ -40,7 +40,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
     @Override
     public boolean checkColor(BallController ball) {
 
-        if(ball.ballID.getFill().equals(line1.getFill())){
+        if(ball.ballID.getFill().equals(line1.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
             if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -50,7 +50,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
             else
                 return false;
         }
-        else if(ball.ballID.getFill().equals(line2.getFill())){
+        else if(ball.ballID.getFill().equals(line2.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
             if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -60,7 +60,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
             else
                 return false;
         }
-        else if(ball.ballID.getFill().equals(line3.getFill())){
+        else if(ball.ballID.getFill().equals(line3.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
             if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -70,7 +70,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
             else
                 return false;
         }
-        else {
+        else if(ball.ballID.getFill().equals(line4.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
             if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
                 return true;
             if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -80,6 +80,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
             else
                 return false;
         }
+        return false;
     }
 
     @Override

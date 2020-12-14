@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
 import java.io.FileInputStream;
@@ -44,6 +46,8 @@ public class pauseMenuController  implements Initializable {
 
     GamePlayController obj;
 
+    public int temp;
+
     @FXML
     void exitGame(MouseEvent event) {
 //        try{
@@ -57,6 +61,8 @@ public class pauseMenuController  implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        System.out.println(temp);
 
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
         transition1.setByAngle(3600);
@@ -74,21 +80,24 @@ public class pauseMenuController  implements Initializable {
 
     @FXML
     void mainMenu(MouseEvent event) throws Exception{
+        addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         pauseRoot.getChildren().setAll(pane);
     }
 
     @FXML
     void newGame(MouseEvent event) throws Exception{
+        addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         pauseRoot.getChildren().setAll(pane);
     }
+
     @FXML
     void resumeGame(MouseEvent event) throws Exception{
 //        Main.deserialize();
 //        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
 //        pauseRoot.getChildren().setAll(pane);
-
+        addMusic("/Sound Effects/button.wav");
         FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
         GamePlayController temp;
         GamePlayController obj = deserialize();
@@ -101,6 +110,15 @@ public class pauseMenuController  implements Initializable {
 
         //AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         //pauseRoot.getChildren().setAll(pane);
+    }
+
+    private void addMusic(String fileName){
+        Media sound = new Media(getClass().getResource(fileName).toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setStartTime(Duration.seconds(0));
+        mediaPlayer.setStopTime(Duration.seconds(1));
+        mediaPlayer.play();
     }
 
 

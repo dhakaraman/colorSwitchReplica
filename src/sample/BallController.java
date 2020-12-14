@@ -36,7 +36,7 @@ public class BallController  {
 
     @FXML
     public void play(ActionEvent event) throws IOException {
-        //addMusic();
+        addMusic();
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ballID.layoutYProperty(), ballID.getLayoutY()-50)));

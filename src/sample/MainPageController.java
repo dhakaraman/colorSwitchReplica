@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -61,6 +63,7 @@ public class MainPageController implements Initializable{
 //        catch(IOException e){
 //            //System.out.println("Could not save the progress :(");
 //        }
+        addMusic("/Sound Effects/button.wav");
         System.exit(0);
     }
 
@@ -114,14 +117,24 @@ public class MainPageController implements Initializable{
 
     @FXML
     void startGame(MouseEvent event) throws Exception{
+        addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         mainRoot.getChildren().setAll(pane);
     }
 
     @FXML
     void loadMenu(MouseEvent event) throws Exception{
+        addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("loadMenu.fxml"));
         mainRoot.getChildren().setAll(pane);
+    }
+    private void addMusic(String fileName){
+        Media sound = new Media(getClass().getResource(fileName).toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setStartTime(Duration.seconds(0));
+        mediaPlayer.setStopTime(Duration.seconds(1));
+        mediaPlayer.play();
     }
 
 }
