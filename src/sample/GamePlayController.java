@@ -358,6 +358,7 @@ public class GamePlayController implements Serializable {
     @FXML
     void pauseGame(MouseEvent event) throws Exception{
         serialize();
+        //ser();
         timer.stop();
         addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
@@ -399,7 +400,22 @@ public class GamePlayController implements Serializable {
         finally {
              out.close();
              }
+
     }
+//    public void ser()  throws IOException{
+//
+//        ArrayList<Integer> arr = new ArrayList<>();
+//        arr.add(89);
+//        DataTableObj oj = new DataTableObj(arr);
+//        ObjectOutputStream out = null;
+//        try {
+//            out = new ObjectOutputStream (new FileOutputStream("SavedGames.txt"));
+//            out.writeObject(oj);
+//        }
+//        finally {
+//            out.close();
+//        }
+//    }
     public void deserialize() throws IOException, ClassNotFoundException {
         ObjectInputStream in = null;
         DataTable s1;
@@ -408,6 +424,20 @@ public class GamePlayController implements Serializable {
                     new FileInputStream("out.txt"));
             s1 = (DataTable) in.readObject();
             resetY2(s1.obstacles,s1.colorSwitch,s1.stars,s1.ballPos,s1.score);
+        } finally {
+            in.close();
+        }
+
+    }
+
+    public void deserialize(Integer index) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = null;
+        DataTableObj s1;
+        try {
+            in = new ObjectInputStream(
+                    new FileInputStream("SavedGames.txt"));
+            s1 = (DataTableObj) in.readObject();
+            resetY2(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score);
         } finally {
             in.close();
         }

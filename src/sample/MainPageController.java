@@ -11,10 +11,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainPageController implements Initializable{
+public class MainPageController{
 
     @FXML
     private AnchorPane mainRoot;
@@ -68,8 +74,24 @@ public class MainPageController implements Initializable{
     }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() throws IOException {
+
+        File file = new File("SavedGames.txt");
+        if(!file.exists()){
+            System.out.println("this file exist");
+            ArrayList<DataTable> arr = new ArrayList<>();
+            DataTableObj oj = new DataTableObj(arr);
+            ObjectOutputStream out = null;
+            try {
+                out = new ObjectOutputStream (new FileOutputStream("SavedGames.txt"));
+                out.writeObject(oj);
+            }
+            finally {
+                out.close();
+            }
+        }
+
+
 
             RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
             transition1.setByAngle(3600);

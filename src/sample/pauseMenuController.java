@@ -13,9 +13,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -103,6 +101,45 @@ public class pauseMenuController  implements Initializable {
         GamePlayController GPobj=load.getController();
         pauseRoot.getChildren().setAll(Pane);
         GPobj.deserialize();
+
+    }
+
+    public void saveGame() throws IOException, ClassNotFoundException{
+        ObjectInputStream in = null;
+        DataTable obj;
+        try {
+            in = new ObjectInputStream(
+                    new FileInputStream("out.txt"));
+            obj = (DataTable) in.readObject();
+
+        }
+        finally {
+            in.close();
+        }
+
+        in = null;
+        DataTableObj object;
+        try {
+            in = new ObjectInputStream(
+                    new FileInputStream("SavedGames.txt"));
+            object = (DataTableObj) in.readObject();
+            object.gameData.add(obj);
+        }
+        finally {
+            in.close();
+        }
+
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream (new FileOutputStream("SavedGames.txt"));
+            out.writeObject(object);
+        }
+        finally {
+            out.close();
+        }
+
+    }
+    public void deleteGames(){
 
     }
 
