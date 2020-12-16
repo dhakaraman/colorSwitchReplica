@@ -259,7 +259,7 @@ public class GamePlayController implements Serializable {
 
     }
 
-    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr){
+    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr,int ballcol){
 
         obj.arc1.setLayoutY(obs.get(0));
         obj.arc2.setLayoutY(obs.get(0));
@@ -312,6 +312,18 @@ public class GamePlayController implements Serializable {
         CSobj4.arc4.setLayoutY(col.get(3));
 
         ball.ballID.setLayoutY(ballPos);
+        if(ballcol==1){
+            ball.ballID.setFill(Paint.valueOf("#8f0fff"));
+        }
+        if(ballcol==2){
+            ball.ballID.setFill(Paint.valueOf("#ff0586"));
+        }
+        if(ballcol==3){
+            ball.ballID.setFill(Paint.valueOf("#fae100"));
+        }
+        if(ballcol==4){
+            ball.ballID.setFill(Paint.valueOf("#32e0f0"));
+        }
         score = scr;
         String temp = Integer.toString(scr);
         textField.setText(temp);
@@ -338,12 +350,27 @@ public class GamePlayController implements Serializable {
         stars.add(starObj3.star1.getLayoutY());
         stars.add(starObj4.star1.getLayoutY());
 
-        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score);
+        int ballcol =0;
+        if(ball.ballID.getFill().equals(Paint.valueOf("#8f0fff"))){
+            ballcol=1;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("#ff0586"))){
+            ballcol=2;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("#fae100"))){
+            ballcol=3;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("0x32e0f0ff"))){
+            ballcol=4;
+        }
+
+        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol);
         FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
         AnchorPane Pane = load.load();
         pauseMenuController GPobj=load.getController();
         playRoot.getChildren().setAll(Pane);
         GPobj.lastGameData = oj;
+        timer.start();
 
     }
 
@@ -356,7 +383,7 @@ public class GamePlayController implements Serializable {
                     new FileInputStream("SavedGames.txt"));
             s1 = (DataTableObj) in.readObject();
 
-            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score);
+            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score,s1.gameData.get(index).ballCol);
             if(s1.gameData.size()>0){
 
                 s1.gameData.remove(s1.gameData.get(index));
