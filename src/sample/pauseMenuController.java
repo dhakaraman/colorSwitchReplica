@@ -25,9 +25,7 @@ public class pauseMenuController  implements Initializable {
     @FXML
     private ImageView circle1, circle2;
 
-
     public DataTable lastGameData;
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

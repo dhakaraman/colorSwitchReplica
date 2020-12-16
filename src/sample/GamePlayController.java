@@ -327,7 +327,7 @@ public class GamePlayController implements Serializable {
         score = scr;
         String temp = Integer.toString(scr);
         textField.setText(temp);
-
+        timer.start();
     }
 
     @FXML
@@ -360,7 +360,7 @@ public class GamePlayController implements Serializable {
         if(ball.ballID.getFill().equals(Paint.valueOf("#fae100"))){
             ballcol=3;
         }
-        if(ball.ballID.getFill().equals(Paint.valueOf("0x32e0f0ff"))){
+        if(ball.ballID.getFill().equals(Paint.valueOf("#32e0f0"))){
             ballcol=4;
         }
 
@@ -370,7 +370,48 @@ public class GamePlayController implements Serializable {
         pauseMenuController GPobj=load.getController();
         playRoot.getChildren().setAll(Pane);
         GPobj.lastGameData = oj;
-        timer.start();
+
+    }
+
+    void continueGame() throws Exception{
+        timer.stop();
+        GameElements.addMusic("/Sound Effects/button.wav");
+
+        obstacles.add(obj.arc1.getLayoutY());//circle
+        obstacles.add(obj1.line1.getLayoutY());//square
+        obstacles.add(obj2.tri1.getLayoutY());//triangle
+        obstacles.add(obj3.line1.getLayoutY());//lines
+
+        colorSwitch.add(CSobj1.arc1.getLayoutY());
+        colorSwitch.add(CSobj2.arc1.getLayoutY());
+        colorSwitch.add(CSobj3.arc1.getLayoutY());
+        colorSwitch.add(CSobj4.arc1.getLayoutY());
+
+        stars.add(starObj1.star1.getLayoutY());
+        stars.add(starObj2.star1.getLayoutY());
+        stars.add(starObj3.star1.getLayoutY());
+        stars.add(starObj4.star1.getLayoutY());
+
+        int ballcol =0;
+        if(ball.ballID.getFill().equals(Paint.valueOf("#8f0fff"))){
+            ballcol=1;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("#ff0586"))){
+            ballcol=2;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("#fae100"))){
+            ballcol=3;
+        }
+        if(ball.ballID.getFill().equals(Paint.valueOf("#32e0f0"))){
+            ballcol=4;
+        }
+
+        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol);
+        FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
+        AnchorPane Pane = load.load();
+        pauseMenuController GPobj=load.getController();
+        playRoot.getChildren().setAll(Pane);
+        GPobj.lastGameData = oj;
 
     }
 

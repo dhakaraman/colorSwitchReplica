@@ -11,7 +11,6 @@ public abstract class GameElements {
 //    public abstract double getY();
 
     public static void addMusic(String filename) {
-
         Media sound = new Media(GameElements.class.getResource(filename).toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setAutoPlay(true);

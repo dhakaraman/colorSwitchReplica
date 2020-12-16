@@ -37,6 +37,8 @@ public class GameOverController{
     @FXML
     public Button button;
 
+    private DataTable lastGame;
+
 
     public void initialize() {
 
