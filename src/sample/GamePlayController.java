@@ -3,13 +3,9 @@ package sample;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Paint;
-import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -23,59 +19,40 @@ import java.util.Collections;
 public class GamePlayController implements Serializable {
 
     @FXML
-    transient AnimationTimer timer;
+    AnimationTimer timer;
 
     @FXML
-    transient public Circle ballID;
+    public Circle ballID;
 
     @FXML
-    transient public Label textField;
+    public Label textField;
 
     @FXML
-    transient private AnchorPane playRoot;
+    private AnchorPane playRoot;
 
     @FXML
-    transient public ImageView circleID;
+    public ImageView circleID;
 
-    @FXML
-    transient TextArea textArea;
-    transient BallController ball;
-    transient circleShapeController obj;
-    transient sqaureShapeController obj1;
-    transient triangleShapeController obj2;
-    transient LineShapeController obj3;
-    transient ColorSwitchController CSobj1,CSobj2,CSobj3,CSobj4;
-    transient public int score=0;
-    transient starShapeController starObj1, starObj2, starObj3, starObj4;
+    BallController ball;
+    circleShapeController obj;
+    sqaureShapeController obj1;
+    triangleShapeController obj2;
+    LineShapeController obj3;
+    ColorSwitchController CSobj1,CSobj2,CSobj3,CSobj4;
+    public int score=0;
+    starShapeController starObj1, starObj2, starObj3, starObj4;
 
     ArrayList<Double> obstacles = new ArrayList<>();
     ArrayList<Double> colorSwitch = new ArrayList<>();
     ArrayList<Double> stars = new ArrayList<>();
-    double ballPos;
 
     public void initialize() throws Exception{
 
-        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circleID);
-        transition1.setByAngle(3600);
-        transition1.setCycleCount(50);
-        transition1.setAutoReverse(true);
-        transition1.play();
+        Obstracle.imageRotate(circleID,1,true);
 
         String temp = Integer.toString(score);
         textField.setText(temp);
 
-        AnchorPane obstraclePane1;
-        AnchorPane obstraclePane2;
-        AnchorPane obstraclePane3;
-        AnchorPane obstraclePane4;
-        AnchorPane obstraclePane5;
-        AnchorPane obstraclePane6;
-        AnchorPane obstraclePane7;
-        AnchorPane obstraclePane8;
-        AnchorPane obstraclePane9;
-        AnchorPane obstraclePane10;
-        AnchorPane obstraclePane11;
-        AnchorPane obstraclePane12;
 
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
@@ -83,74 +60,72 @@ public class GamePlayController implements Serializable {
         playRoot.getChildren().addAll(ballPane);
 
         FXMLLoader load2 = new FXMLLoader(getClass().getResource("circleShape.fxml"));
-        obstraclePane1 = load2.load();
+        AnchorPane ciclePane = load2.load();
         obj=load2.getController();
-        playRoot.getChildren().addAll(obstraclePane1);
+        playRoot.getChildren().addAll(ciclePane);
 
         FXMLLoader load3 = new FXMLLoader(getClass().getResource("LineShape.fxml"));
-        obstraclePane2= load3.load();
+        AnchorPane linePane= load3.load();
         obj3=load3.getController();
-        playRoot.getChildren().addAll(obstraclePane2);
+        playRoot.getChildren().addAll(linePane);
 
         FXMLLoader load4 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
-        obstraclePane3 = load4.load();
+        AnchorPane squarePane = load4.load();
         obj1=load4.getController();
-        playRoot.getChildren().addAll(obstraclePane3);
+        playRoot.getChildren().addAll(squarePane);
 
         FXMLLoader load5 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
-        obstraclePane4 = load5.load();
+        AnchorPane trianglePane = load5.load();
         obj2=load5.getController();
-        playRoot.getChildren().addAll(obstraclePane4);
+        playRoot.getChildren().addAll(trianglePane);
 
         FXMLLoader load6 = new FXMLLoader(getClass().getResource("starShape.fxml"));
-        obstraclePane5 = load6.load();
+        AnchorPane starPane1 = load6.load();
         starObj1=load6.getController();
-        playRoot.getChildren().addAll(obstraclePane5);
+        playRoot.getChildren().addAll(starPane1);
 
         FXMLLoader load7 = new FXMLLoader(getClass().getResource("starShape.fxml"));
-        obstraclePane6 = load7.load();
+        AnchorPane starPane2 = load7.load();
         starObj2=load7.getController();
-        playRoot.getChildren().addAll(obstraclePane6);
+        playRoot.getChildren().addAll(starPane2);
 
         FXMLLoader load8 = new FXMLLoader(getClass().getResource("starShape.fxml"));
-        obstraclePane7 = load8.load();
+        AnchorPane starPane3 = load8.load();
         starObj3=load8.getController();
-        playRoot.getChildren().addAll(obstraclePane7);
+        playRoot.getChildren().addAll(starPane3);
 
         FXMLLoader load9 = new FXMLLoader(getClass().getResource("starShape.fxml"));
-        obstraclePane8 = load9.load();
+        AnchorPane starPane4 = load9.load();
         starObj4=load9.getController();
-        playRoot.getChildren().addAll(obstraclePane8);
+        playRoot.getChildren().addAll(starPane4);
 
         FXMLLoader load10 = new FXMLLoader(getClass().getResource("ColorSwitch.fxml"));
-        obstraclePane9 = load10.load();
+        AnchorPane colorSwitchPane1 = load10.load();
         CSobj1=load10.getController();
-        playRoot.getChildren().addAll(obstraclePane9);
+        playRoot.getChildren().addAll(colorSwitchPane1);
 
         FXMLLoader load11 = new FXMLLoader(getClass().getResource("ColorSwitch.fxml"));
-        obstraclePane10 = load11.load();
+        AnchorPane colorSwitchPane2 = load11.load();
         CSobj2=load11.getController();
-        playRoot.getChildren().addAll(obstraclePane10);
+        playRoot.getChildren().addAll(colorSwitchPane2);
 
         FXMLLoader load12 = new FXMLLoader(getClass().getResource("ColorSwitch.fxml"));
-        obstraclePane11 = load12.load();
+        AnchorPane colorSwitchPane3 = load12.load();
         CSobj3=load12.getController();
-        playRoot.getChildren().addAll(obstraclePane11);
+        playRoot.getChildren().addAll(colorSwitchPane3);
 
         FXMLLoader load13 = new FXMLLoader(getClass().getResource("ColorSwitch.fxml"));
-        obstraclePane12 = load13.load();
+        AnchorPane colorSwitchPane4 = load13.load();
         CSobj4=load13.getController();
-        playRoot.getChildren().addAll(obstraclePane12);
+        playRoot.getChildren().addAll(colorSwitchPane4);
 
         resetY(-200);
-        //deserialize();
 
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 try {
                     update();
-                    //MovingObstacles();
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -162,7 +137,6 @@ public class GamePlayController implements Serializable {
 
 
     void update() throws Exception{
-        //System.out.println(a1+" "+a2+" "+a3+" "+a4);
 
         boolean color9=false,color10=false,color11=false,color12=false;
         boolean color=false,color2=false,color3=false,color4=false,color5=false,color6=false,color7=false,color8=false;
@@ -197,15 +171,9 @@ public class GamePlayController implements Serializable {
         if(color || color2 || color3 || color4){
 
             timer.stop();
-            serialize();
-            //addMusic("/Sound Effects/breakball1.wav");
-
+            GameElements.addMusic("/Sound Effects/breakball1.wav");
 
             FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
-
-//            GameOverController controller = new GameOverController();
-//            load.setController(controller);
-
             AnchorPane Pane = load.load();
             GameOverController GOobj=load.getController();
             playRoot.getChildren().setAll(Pane);
@@ -217,12 +185,7 @@ public class GamePlayController implements Serializable {
             String temp = Integer.toString(score);
             textField.setText(temp);
         }
-        if(color9){
-            String[] arr = new String[]{"#8f0fff","#ff0586","#fae100","#32e0f0"};
-            Collections.shuffle(Arrays.asList(arr));
-            ball.ballID.setFill(Paint.valueOf(arr[0]));
-        }
-        else if(color10 || color12){
+        if(color9 || color10 || color12){
             String[] arr = new String[]{"#8f0fff","#ff0586","#fae100","#32e0f0"};
             Collections.shuffle(Arrays.asList(arr));
             ball.ballID.setFill(Paint.valueOf(arr[0]));
@@ -242,7 +205,7 @@ public class GamePlayController implements Serializable {
         mylist.add(pos-800);
         mylist.add(pos-1200);
 
-        //Collections.shuffle(mylist);
+        Collections.shuffle(mylist);
 
         obj.arc1.setLayoutY(mylist.get(0));
         obj.arc2.setLayoutY(mylist.get(0));
@@ -296,7 +259,7 @@ public class GamePlayController implements Serializable {
 
     }
 
-    public void resetY2(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr){
+    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr){
 
         obj.arc1.setLayoutY(obs.get(0));
         obj.arc2.setLayoutY(obs.get(0));
@@ -355,27 +318,11 @@ public class GamePlayController implements Serializable {
 
     }
 
-
-
     @FXML
     void pauseGame(MouseEvent event) throws Exception{
-        serialize();
         timer.stop();
-        addMusic("/Sound Effects/button.wav");
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("pauseMenu.fxml"));
-        playRoot.getChildren().setAll(pane);
-    }
+        GameElements.addMusic("/Sound Effects/button.wav");
 
-    private void addMusic(String fileName){
-        Media sound = new Media(getClass().getResource(fileName).toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
-    }
-
-    public void serialize() throws IOException {
         obstacles.add(obj.arc1.getLayoutY());//circle
         obstacles.add(obj1.line1.getLayoutY());//square
         obstacles.add(obj2.tri1.getLayoutY());//triangle
@@ -391,30 +338,13 @@ public class GamePlayController implements Serializable {
         stars.add(starObj3.star1.getLayoutY());
         stars.add(starObj4.star1.getLayoutY());
 
-
         DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score);
-        ObjectOutputStream out = null;
-        try {
-             out = new ObjectOutputStream (new FileOutputStream("out.txt"));
-             out.writeObject(oj);
-             }
-        finally {
-             out.close();
-             }
+        FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
+        AnchorPane Pane = load.load();
+        pauseMenuController GPobj=load.getController();
+        playRoot.getChildren().setAll(Pane);
+        GPobj.lastGameData = oj;
 
-    }
-
-    public void deserialize() throws IOException, ClassNotFoundException {
-        ObjectInputStream in = null;
-        DataTable s1;
-        try {
-            in = new ObjectInputStream(
-                    new FileInputStream("out.txt"));
-            s1 = (DataTable) in.readObject();
-            resetY2(s1.obstacles,s1.colorSwitch,s1.stars,s1.ballPos,s1.score);
-        } finally {
-            in.close();
-        }
     }
 
     public void deserialize(Integer index) throws IOException, ClassNotFoundException {
@@ -426,7 +356,7 @@ public class GamePlayController implements Serializable {
                     new FileInputStream("SavedGames.txt"));
             s1 = (DataTableObj) in.readObject();
 
-            resetY2(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score);
+            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score);
             if(s1.gameData.size()>0){
 
                 s1.gameData.remove(s1.gameData.get(index));
@@ -446,4 +376,6 @@ public class GamePlayController implements Serializable {
         }
 
     }
+
+
 }

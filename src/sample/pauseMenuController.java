@@ -23,102 +23,53 @@ public class pauseMenuController  implements Initializable {
     private AnchorPane pauseRoot;
 
     @FXML
-    private ImageView circle1;
-
-    @FXML
-    private ImageView circle2;
-
-    @FXML
-    private ImageView newGame;
-
-    @FXML
-    private Button mainMenu1;
-
-    @FXML
-    private ImageView mainMenu;
-
-    @FXML
-    private Button button;
+    private ImageView circle1, circle2;
 
 
-    public int temp;
+    public DataTable lastGameData;
 
-    @FXML
-    void exitGame(MouseEvent event) {
-//        try{
-////            Main.serialize();
-//        }
-//        catch(IOException e){
-//            //System.out.println("Could not save the progress :(");
-//        }
-
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
-        transition1.setByAngle(3600);
-        transition1.setCycleCount(50);
-        transition1.setAutoReverse(true);
-        transition1.play();
-
-        RotateTransition transition2 = new RotateTransition(Duration.seconds(30), circle2);
-        transition2.setByAngle(3600);
-        transition2.setCycleCount(50);
-        transition2.setAutoReverse(true);
-        transition2.play();
+        Obstracle.imageRotate(circle1,1,true);
+        Obstracle.imageRotate(circle2,1,true);
 
     }
 
     @FXML
     void mainMenu(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         pauseRoot.getChildren().setAll(pane);
     }
 
     @FXML
     void newGame(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         pauseRoot.getChildren().setAll(pane);
     }
 
     @FXML
     void resumeGame(MouseEvent event) throws Exception{
-//        Main.deserialize();
-//        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
-//        pauseRoot.getChildren().setAll(pane);
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
         AnchorPane Pane = load.load();
         GamePlayController GPobj=load.getController();
         pauseRoot.getChildren().setAll(Pane);
-        GPobj.deserialize();
-
+        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score);
     }
 
+    @FXML
     public void saveGame() throws IOException, ClassNotFoundException{
         ObjectInputStream in = null;
-        DataTable obj;
-        try {
-            in = new ObjectInputStream(
-                    new FileInputStream("out.txt"));
-            obj = (DataTable) in.readObject();
-
-        }
-        finally {
-            in.close();
-        }
-
-        in = null;
         DataTableObj object;
         try {
             in = new ObjectInputStream(
                     new FileInputStream("SavedGames.txt"));
             object = (DataTableObj) in.readObject();
-            object.gameData.add(obj);
+            object.gameData.add(lastGameData);
         }
         finally {
             in.close();
@@ -136,17 +87,4 @@ public class pauseMenuController  implements Initializable {
         System.exit(0);
 
     }
-    public void deleteGames(){
-
-    }
-
-    private void addMusic(String fileName){
-        Media sound = new Media(getClass().getResource(fileName).toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
-    }
-
 }

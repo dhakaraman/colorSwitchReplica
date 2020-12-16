@@ -11,7 +11,7 @@
             <Image url="@../assets/AiPauseBackground2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="58.0" fitWidth="227.0" layoutX="399.0" layoutY="402.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="58.0" fitWidth="227.0" layoutX="399.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
       <ImageView fitHeight="87.0" fitWidth="95.0" layoutX="347.0" layoutY="180.0" onMouseClicked="#mainMenu" pickOnBounds="true" preserveRatio="true">
       </ImageView>

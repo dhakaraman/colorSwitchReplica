@@ -28,18 +28,11 @@ public class GameOverController{
     @FXML
     public AnchorPane OverRoot;
 
-
     @FXML
-    private ImageView circle1;
-
-    @FXML
-    public ImageView circle2;
+    private ImageView circle1,circle2;
 
     @FXML
     public Label textField;
-
-    @FXML
-    public int temp;
 
     @FXML
     public Button button;
@@ -56,60 +49,40 @@ public class GameOverController{
 //        popup.show(Main.stage);
 //        popup.setAutoHide(true);
 
-        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
-        transition1.setByAngle(3600);
-        transition1.setCycleCount(50);
-        transition1.setAutoReverse(true);
-        transition1.play();
+        Obstracle.imageRotate(circle1,1,true);
+        Obstracle.imageRotate(circle2,1,true);
 
-        RotateTransition transition2 = new RotateTransition(Duration.seconds(30), circle2);
-        transition2.setByAngle(3600);
-        transition2.setCycleCount(50);
-        transition2.setAutoReverse(true);
-        transition2.play();
     }
 
-    public void exitGame(MouseEvent event) {
-//        try{
-////            Main.serialize();
-//        }
-//        catch(IOException e){
-//            //System.out.println("Could not save the progress :(");
-//        }
-        addMusic("/Sound Effects/button.wav");
-        System.exit(0);
+    @FXML
+    public void restart(MouseEvent event) throws Exception{
+        GameElements.addMusic("/Sound Effects/button.wav");
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
+        OverRoot.getChildren().setAll(pane);
     }
-
+    @FXML
     public void mainMenu(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         OverRoot.getChildren().setAll(pane);
     }
 
     @FXML
-    public void newGame(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
-        OverRoot.getChildren().setAll(pane);
-    }
-
     public void revive() throws Exception{
-        System.out.println("mein yahan hun");
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
         AnchorPane Pane = load.load();
         GamePlayController GPobj=load.getController();
         OverRoot.getChildren().setAll(Pane);
-        GPobj.deserialize();
+
     }
 
-    private void addMusic(String fileName){
-        Media sound = new Media(getClass().getResource(fileName).toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
+    @FXML
+    public void exitGame(MouseEvent event) {
+        GameElements.addMusic("/Sound Effects/button.wav");
+        System.exit(0);
     }
+
+
 
 }

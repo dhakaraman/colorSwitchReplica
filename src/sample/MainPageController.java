@@ -8,11 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.stage.Popup;
-import javafx.util.Duration;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,60 +22,16 @@ public class MainPageController{
     private AnchorPane mainRoot;
 
     @FXML
-    private ImageView circle1;
+    private ImageView circle1,circle2,circle3,circle4,circle5;
 
     @FXML
-    private ImageView linex1;
-
-    @FXML
-    private ImageView linex2;
-
-    @FXML
-    private ImageView circle2;
-
-    @FXML
-    private ImageView circle3;
-
-    @FXML
-    private ImageView circle4;
-
-    @FXML
-    private ImageView circle5;
-
-    @FXML
-    private Button startGame;
-
-    @FXML
-    private Button startGame1;
-
-    @FXML
-    private ImageView startgame;
-
-    @FXML
-    private ImageView exitGame;
-
-    @FXML
-    private ImageView loadGame;
-
-    @FXML
-    void exitGame(MouseEvent event) {
-//        try{
-////            Main.serialize();
-//        }
-//        catch(IOException e){
-//            //System.out.println("Could not save the progress :(");
-//        }
-        addMusic("/Sound Effects/button.wav");
-        System.exit(0);
-    }
+    private ImageView linex1,linex2;
 
 
     public void initialize() throws IOException {
 
-
         File file = new File("SavedGames.txt");
         if(!file.exists()){
-            System.out.println("this file exist");
             ArrayList<DataTable> arr = new ArrayList<>();
             DataTableObj oj = new DataTableObj(arr);
             ObjectOutputStream out = null;
@@ -93,73 +44,34 @@ public class MainPageController{
             }
         }
 
-
-
-            RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
-            transition1.setByAngle(3600);
-            transition1.setCycleCount(50);
-            transition1.setAutoReverse(true);
-            transition1.play();
-
-            RotateTransition transition2 = new RotateTransition(Duration.seconds(25), circle2);
-            transition2.setByAngle(3600);
-            transition2.setCycleCount(55);
-            transition2.setAutoReverse(true);
-            transition2.play();
-
-            RotateTransition transition3 = new RotateTransition(Duration.seconds(30), circle3);
-            transition3.setByAngle(-3600);
-            transition3.setCycleCount(50);
-            transition3.setAutoReverse(true);
-            transition3.play();
-
-            RotateTransition transition5 = new RotateTransition(Duration.seconds(30), linex1);
-            transition5.setByAngle(-3600);
-            transition5.setCycleCount(50);
-            transition5.setAutoReverse(true);
-            transition5.play();
-
-            RotateTransition transition4 = new RotateTransition(Duration.seconds(30), linex2);
-            transition4.setByAngle(3600);
-            transition4.setCycleCount(50);
-            transition4.setAutoReverse(true);
-            transition4.play();
-
-            RotateTransition transition6 = new RotateTransition(Duration.seconds(30), circle4);
-            transition6.setByAngle(3600);
-            transition6.setCycleCount(50);
-            transition6.setAutoReverse(true);
-            transition6.play();
-
-            RotateTransition transition7 = new RotateTransition(Duration.seconds(30), circle5);
-            transition7.setByAngle(3600);
-            transition7.setCycleCount(50);
-            transition7.setAutoReverse(true);
-            transition7.play();
+        Obstracle.imageRotate(circle1,1,true);
+        Obstracle.imageRotate(circle2,1,true);
+        Obstracle.imageRotate(circle3,-1,true);
+        Obstracle.imageRotate(circle4,1,true);
+        Obstracle.imageRotate(circle5,1,true);
+        Obstracle.imageRotate(linex1,-1,true);
+        Obstracle.imageRotate(linex2,1,true);
 
     }
 
     @FXML
     void startGame(MouseEvent event) throws Exception{
-        //GamePlayController oj = new GamePlayController(-200);
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("GamePlay.fxml"));
         mainRoot.getChildren().setAll(pane);
     }
 
     @FXML
     void loadMenu(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("loadMenu.fxml"));
         mainRoot.getChildren().setAll(pane);
     }
-    private void addMusic(String fileName){
-        Media sound = new Media(getClass().getResource(fileName).toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
+
+    @FXML
+    void exitGame(MouseEvent event) {
+        GameElements.addMusic("/Sound Effects/button.wav");
+        System.exit(0);
     }
 
 }

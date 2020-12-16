@@ -20,19 +20,16 @@ public class ColorSwitchController extends Obstracle {
     @FXML
     public Arc arc1,arc2,arc3,arc4;
 
-    public static MediaPlayer mediaPlayer;
-
-
 
     @Override
     public boolean checkColor(BallController ball) {
         if(ball.ballID.getLayoutY()<=arc1.getLayoutY()){
+            GameElements.addMusic("/Sound Effects/colorswitch.wav");
             double dist = arc1.getLayoutY()-1600;
             arc1.setLayoutY(dist);
             arc2.setLayoutY(dist);
             arc3.setLayoutY(dist);
             arc4.setLayoutY(dist);
-            addMusic();
             return true;
         }
         return false;
@@ -56,14 +53,7 @@ public class ColorSwitchController extends Obstracle {
 
     }
 
-    public void addMusic() {
-        Media sound = new Media(getClass().getResource("/Sound Effects/colorswitch.wav").toString());
-        mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
-    }
+
 
 
 }

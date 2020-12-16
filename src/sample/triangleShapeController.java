@@ -20,6 +20,10 @@ import javafx.util.Duration;
 
 
 public class triangleShapeController extends Obstracle implements Initializable{
+
+    protected double side;
+
+
     @FXML
     AnchorPane trianglePane;
     @FXML
@@ -114,10 +118,10 @@ public class triangleShapeController extends Obstracle implements Initializable{
         r4.setPivotY(0);
         innerTri.getTransforms().add(r4);
 
-        helper(r1);
-        helper(r2);
-        helper(r3);
-        helper(r4);
+        rotateObstacle(r1,1,true);
+        rotateObstacle(r2,1,true);
+        rotateObstacle(r3,1,true);
+        rotateObstacle(r4,1,true);
     }
 
 }

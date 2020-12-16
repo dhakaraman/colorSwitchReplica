@@ -15,31 +15,9 @@ import java.util.ResourceBundle;
 
 public class LineShapeController extends Obstracle implements Initializable {
 
-
-
     @FXML
-    public Line line1;
+    public Line line1, line2,line3,line4,line5,line6,line7,line8;
 
-    @FXML
-    public Line line2;
-
-    @FXML
-    public Line line3;
-
-    @FXML
-    public Line line4;
-
-    @FXML
-    public Line line5;
-
-    @FXML
-    public Line line6;
-
-    @FXML
-    public Line line7;
-
-    @FXML
-    public Line line8;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,9 +29,6 @@ public class LineShapeController extends Obstracle implements Initializable {
 
     @Override
     public boolean checkColor(BallController ball) {
-//        if(line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            System.out.println("now im here");
-//        }
 
         if(ball.ballID.getFill().equals(line1.getFill()) && ball.ballID.getFill().equals(line6.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
             if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) || line5.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
@@ -160,14 +135,14 @@ public class LineShapeController extends Obstracle implements Initializable {
         r8.setPivotY(0);
         line8.getTransforms().add(r8);
 
-        helper(r1);
-        helper(r2);
-        helper(r3);
-        helper(r4);
-        helper(r5);
-        helper(r6);
-        helper(r7);
-        helper(r8);
+        rotateObstacle(r1,1,true);
+        rotateObstacle(r2,1,true);
+        rotateObstacle(r3,1,true);
+        rotateObstacle(r4,1,true);
+        rotateObstacle(r5,-1,true);
+        rotateObstacle(r6,-1,true);
+        rotateObstacle(r7,-1,true);
+        rotateObstacle(r8,-1,true);
 
     }
 }

@@ -8,21 +8,13 @@ import javafx.scene.transform.Rotate;
 
 public class circleShapeController extends Obstracle {
 
-    @FXML
-    public Arc arc1;
+    private double radius;
 
     @FXML
-    public Arc arc2;
-
-    @FXML
-    public Arc arc3;
-
-    @FXML
-    public Arc arc4;
+    public Arc arc1,arc2,arc3,arc4;
 
     @FXML
     public Circle innerPart;
-
 
     @FXML
     private void initialize() {
@@ -34,7 +26,6 @@ public class circleShapeController extends Obstracle {
 
     @Override
     public boolean checkColor(BallController ball) {
-        //System.out.println("I am in circle");
 
         if(ball.ballID.getFill().equals(arc1.getFill())){
             if(arc2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerPart.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
@@ -131,9 +122,9 @@ public class circleShapeController extends Obstracle {
         r1.setPivotY(0);
         arc4.getTransforms().add(r4);
 
-        helper(r1);
-        helper(r2);
-        helper(r3);
-        helper(r4);
+        rotateObstacle(r1,1,true);
+        rotateObstacle(r2,1,true);
+        rotateObstacle(r3,1,true);
+        rotateObstacle(r4,1,true);
     }
 }

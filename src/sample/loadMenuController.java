@@ -24,28 +24,12 @@ public class loadMenuController {
     private AnchorPane loadRoot;
 
     @FXML
-    private Button BackButon1;
-
-    @FXML
-    private ImageView circle1;
-
-    @FXML
-    private ImageView circle2;
-
-    @FXML
-    private ImageView BackButton;
+    private ImageView circle1, circle2;
 
     @FXML
     private ListView textField;
 
     ArrayList<DataTable> loadedGames;
-
-    @FXML
-    void mainMenu(MouseEvent event) throws Exception{
-        addMusic("/Sound Effects/button.wav");
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-        loadRoot.getChildren().setAll(pane);
-    }
 
 
     public void initialize() throws Exception{
@@ -69,15 +53,22 @@ public class loadMenuController {
             System.out.println("SavedGames.txt File deleted");
         }
         else{
-            addMusic("/Sound Effects/error.wav");
+            GameElements.addMusic("/Sound Effects/error.wav");
         }
+    }
+
+    @FXML
+    void mainMenu(MouseEvent event) throws Exception{
+        GameElements.addMusic("/Sound Effects/button.wav");
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        loadRoot.getChildren().setAll(pane);
     }
 
     public void loadGame() throws IOException, ClassNotFoundException {
         ObservableList selectedIndices = textField.getSelectionModel().getSelectedIndices();
         for(Object o : selectedIndices){
             System.out.println("o = " + o + " (" + o.getClass() + ")");
-            addMusic("/Sound Effects/button.wav");
+            GameElements.addMusic("/Sound Effects/button.wav");
             FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
             AnchorPane Pane = load.load();
             GamePlayController GPobj=load.getController();
@@ -102,15 +93,6 @@ public class loadMenuController {
         finally {
             in.close();
         }
-    }
-
-    private void addMusic(String fileName){
-        Media sound = new Media(getClass().getResource(fileName).toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setStartTime(Duration.seconds(0));
-        mediaPlayer.setStopTime(Duration.seconds(1));
-        mediaPlayer.play();
     }
 
     public void setLoadGame(ArrayList<DataTable> loadedGames){

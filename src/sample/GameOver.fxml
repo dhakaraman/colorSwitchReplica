@@ -22,7 +22,7 @@
             <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView id="bevel-grey" fitHeight="55.0" fitWidth="235.0" layoutX="384.0" layoutY="262.0" onMouseClicked="#newGame" pickOnBounds="true" preserveRatio="true" />
+      <ImageView id="bevel-grey" fitHeight="55.0" fitWidth="235.0" layoutX="384.0" layoutY="262.0" onMouseClicked="#restart" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="381.0" layoutY="338.0" onMouseClicked="#mainMenu" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="389.0" layoutY="409.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="textField" layoutX="487.0" layoutY="117.0" prefHeight="49.0" prefWidth="34.0" text="0" textFill="WHITE">

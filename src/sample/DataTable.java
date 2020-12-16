@@ -18,7 +18,7 @@ public class DataTable implements Serializable {
     ArrayList<Double> colorSwitch;
     ArrayList<Double> stars;
     double ballPos;
-    Paint ballCol;
+    int ballCol;
     int score;
 
     public DataTable(ArrayList<Double> obstacles, ArrayList<Double> colorSwitch, ArrayList<Double> stars, double ballPos, int score){

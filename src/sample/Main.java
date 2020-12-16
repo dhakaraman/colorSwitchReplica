@@ -25,10 +25,9 @@ public class Main extends Application implements Serializable{
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        addMusic();
+        //addMusic();
         Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
-        //scene.getStylesheets().add("C:/Users/HP/IdeaProjects/colorSwitchReplica/src/sample/Style.css");
         primaryStage.setTitle("Color Switch");
         primaryStage.setScene(scene);
         primaryStage.show();

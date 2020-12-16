@@ -14,6 +14,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class sqaureShapeController extends Obstracle implements Initializable {
+
+    protected double side;
+
     @FXML
     AnchorPane squareRoot;
 
@@ -21,16 +24,7 @@ public class sqaureShapeController extends Obstracle implements Initializable {
     public Polygon sqrID;
 
     @FXML
-    public Line line1;
-
-    @FXML
-    public Line line2;
-
-    @FXML
-    public Line line3;
-
-    @FXML
-    public Line line4;
+    public Line line1, line2, line3, line4;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -122,11 +116,11 @@ public class sqaureShapeController extends Obstracle implements Initializable {
         r5.setPivotY(5);
         sqrID.getTransforms().add(r5);
 
-        helper(r1);
-        helper(r2);
-        helper(r3);
-        helper(r4);
-        helper(r5);
+        rotateObstacle(r1,1,true);
+        rotateObstacle(r2,1,true);
+        rotateObstacle(r3,1,true);
+        rotateObstacle(r4,1,true);
+        rotateObstacle(r5,1,true);
 
     }
 
