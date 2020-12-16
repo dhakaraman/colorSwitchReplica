@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane fx:id="ColorSwitchRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ColorSwitchController">
+   <children>
+      <Arc fx:id="arc1" fill="#8f0fff" layoutX="512.0" layoutY="200.0" length="90.0" radiusX="15.0" radiusY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+      <Arc fx:id="arc2" fill="#ff0586" layoutX="512.0" layoutY="200.0" length="90.0" radiusX="15.0" radiusY="15.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+      <Arc fx:id="arc3" fill="#fae100" layoutX="512.0" layoutY="200.0" length="90.0" radiusX="15.0" radiusY="15.0" startAngle="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+      <Arc fx:id="arc4" fill="#32e0f0" layoutX="512.0" layoutY="200.0" length="90.0" radiusX="15.0" radiusY="15.0" startAngle="180.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" type="ROUND" />
+   </children>
+</AnchorPane>
