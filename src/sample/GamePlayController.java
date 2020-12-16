@@ -415,7 +415,6 @@ public class GamePlayController implements Serializable {
         } finally {
             in.close();
         }
-
     }
 
     public void deserialize(Integer index) throws IOException, ClassNotFoundException {
