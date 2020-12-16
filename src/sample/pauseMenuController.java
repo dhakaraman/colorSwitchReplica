@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Popup;
 import javafx.util.Duration;
 
 import java.io.*;
@@ -37,12 +38,8 @@ public class pauseMenuController  implements Initializable {
     private ImageView mainMenu;
 
     @FXML
-    private Button exitGame1;
+    private Button button;
 
-    @FXML
-    private ImageView exitGame;
-
-    GamePlayController obj;
 
     public int temp;
 
@@ -54,13 +51,11 @@ public class pauseMenuController  implements Initializable {
 //        catch(IOException e){
 //            //System.out.println("Could not save the progress :(");
 //        }
-        System.exit(0);
+
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        System.out.println(temp);
 
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
         transition1.setByAngle(3600);
@@ -137,6 +132,8 @@ public class pauseMenuController  implements Initializable {
         finally {
             out.close();
         }
+
+        System.exit(0);
 
     }
     public void deleteGames(){

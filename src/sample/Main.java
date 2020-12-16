@@ -20,6 +20,7 @@ import java.net.URL;
 
 public class Main extends Application implements Serializable{
     public static MediaPlayer mediaPlayer;
+    public static Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -27,9 +28,11 @@ public class Main extends Application implements Serializable{
         //addMusic();
         Parent mainPage=FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         Scene scene = new Scene(mainPage,1024,600);
+        //scene.getStylesheets().add("C:/Users/HP/IdeaProjects/colorSwitchReplica/src/sample/Style.css");
         primaryStage.setTitle("Color Switch");
         primaryStage.setScene(scene);
         primaryStage.show();
+        stage = primaryStage;
     }
 
     public void addMusic() {

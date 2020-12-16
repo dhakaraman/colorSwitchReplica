@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.animation.RotateTransition;
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,7 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import javafx.scene.control.ListView;
-import javax.swing.text.html.ImageView;
+import javafx.scene.image.ImageView;
 import java.awt.*;
 import java.io.*;
 import java.net.URL;
@@ -24,6 +25,12 @@ public class loadMenuController {
 
     @FXML
     private Button BackButon1;
+
+    @FXML
+    private ImageView circle1;
+
+    @FXML
+    private ImageView circle2;
 
     @FXML
     private ImageView BackButton;
@@ -43,6 +50,17 @@ public class loadMenuController {
 
     public void initialize() throws Exception{
         listOfSavedGames();
+        RotateTransition transition1 = new RotateTransition(Duration.seconds(30), circle1);
+        transition1.setByAngle(3600);
+        transition1.setCycleCount(50);
+        transition1.setAutoReverse(true);
+        transition1.play();
+
+        RotateTransition transition2 = new RotateTransition(Duration.seconds(30), circle2);
+        transition2.setByAngle(3600);
+        transition2.setCycleCount(50);
+        transition2.setAutoReverse(true);
+        transition2.play();
     }
 
     public void deleteGames() throws Exception{

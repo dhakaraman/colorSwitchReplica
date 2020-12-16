@@ -17,17 +17,17 @@
       </ImageView>
       <ImageView fitHeight="55.0" fitWidth="250.0" layoutX="102.0" layoutY="480.0" onMouseClicked="#loadMenu" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-       <ImageView fx:id="circle1" fitHeight="102.0" fitWidth="102.0" layoutX="481.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true" >
+       <ImageView fx:id="circle1" fitHeight="102.0" fitWidth="102.0" layoutX="481.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
            <image>
                <Image url="@../assets/Circle.png" />
            </image>
        </ImageView>
-       <ImageView fx:id="circle2" fitHeight="192.0" fitWidth="192.0" layoutX="436.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" >
+       <ImageView fx:id="circle2" fitHeight="192.0" fitWidth="192.0" layoutX="436.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
            <image>
                <Image url="@../assets/Circle.png" />
            </image>
        </ImageView>
-       <ImageView fx:id="circle3" fitHeight="150.0" fitWidth="141.0" layoutX="462.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#startGame">
+       <ImageView fx:id="circle3" fitHeight="150.0" fitWidth="141.0" layoutX="462.0" layoutY="364.0" onMouseClicked="#startGame" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../assets/Circle.png" />
            </image>
@@ -47,7 +47,7 @@
             <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="circle5" fitHeight="49.0" fitWidth="60.0" layoutX="534.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle5" fitHeight="49.0" fitWidth="60.0" layoutX="534.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../assets/Circle.png" />
          </image>

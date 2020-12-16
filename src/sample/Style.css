@@ -1,0 +1,26 @@
+#bevel-grey{
+    -fx-color-one: #d6d6d6;
+    -fx-color-two: #ff0181;
+    -fx-color-three: #f6f6f6;
+
+    -fx-background-color:
+            linear-gradient(#ff0181, -fx-color-one),
+            linear-gradient(#ff0181 0%, -fx-color-two 20%, -fx-color-one 100%),
+            linear-gradient(#ff0181 0%, -fx-color-three 50%);
+    -fx-background-radius: 8, 7, 6;
+    -fx-background-insets: 0, 1, 2;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+
+#bevel-grey:hover {
+    -fx-color-one: #32dbf0;
+    -fx-color-two: #32dbf0;
+    -fx-color-three: #32dbf0;
+
+}
+#bevel-grey:pressed {
+    -fx-color-one: #ff0181;
+    -fx-color-two: #ff0181;
+    -fx-color-three: #ff0181;
+}

@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Popup;
 import javafx.util.Duration;
 
 import java.io.File;
@@ -75,6 +76,7 @@ public class MainPageController{
 
 
     public void initialize() throws IOException {
+
 
         File file = new File("SavedGames.txt");
         if(!file.exists()){
