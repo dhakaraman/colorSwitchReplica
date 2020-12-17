@@ -12,12 +12,12 @@
             <Image url="@../assets/AiGameOverBackGround.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="circle1" fitHeight="70.0" fitWidth="60.0" layoutX="381.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fx:id="circle1" fitHeight="70.0" fitWidth="60.0" layoutX="389.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="circle2" fitHeight="63.0" fitWidth="60.0" layoutX="282.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="circle2" fitHeight="63.0" fitWidth="60.0" layoutX="293.0" layoutY="523.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/Circle.png" />
          </image>
@@ -25,7 +25,7 @@
       <ImageView id="bevel-grey" fitHeight="55.0" fitWidth="235.0" layoutX="384.0" layoutY="262.0" onMouseClicked="#restart" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="381.0" layoutY="338.0" onMouseClicked="#mainMenu" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="389.0" layoutY="409.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="textField" layoutX="487.0" layoutY="117.0" prefHeight="49.0" prefWidth="34.0" text="0" textFill="WHITE">
+      <Label fx:id="textField" layoutX="487.0" layoutY="117.0" prefHeight="70.0" prefWidth="194.0" text="0" textFill="WHITE">
          <font>
             <Font size="48.0" />
          </font>

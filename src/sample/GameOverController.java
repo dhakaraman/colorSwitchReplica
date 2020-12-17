@@ -37,7 +37,7 @@ public class GameOverController{
     @FXML
     public Button button;
 
-    private DataTable lastGame;
+    public DataTable lastGameData;
 
 
     public void initialize() {
@@ -76,6 +76,7 @@ public class GameOverController{
         AnchorPane Pane = load.load();
         GamePlayController GPobj=load.getController();
         OverRoot.getChildren().setAll(Pane);
+        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol,-200);
 
     }
 

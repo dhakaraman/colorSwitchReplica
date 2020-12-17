@@ -6,9 +6,12 @@
 <AnchorPane fx:id="squareRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.sqaureShapeController">
    <children>
       <Line fx:id="line1" endX="-31.0" endY="82.0" fill="#32dbf0" layoutX="455.0" layoutY="68.0" startX="123.0" startY="81.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="line2" endX="123.0" endY="-63.0" fill="#8f0fff" layoutX="455.0" layoutY="68.0" startX="-31.0" startY="-63.0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="line2" endX="123.0" endY="-63.0" fill="#900dff" layoutX="455.0" layoutY="68.0" startX="-31.0" startY="-63.0" stroke="#900dff" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="line3" endX="-31.0" endY="-63.0" fill="#fae100" layoutX="455.0" layoutY="68.0" startX="-31.0" startY="82.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="line4" endX="123.0" endY="81.0" fill="#ff0181" layoutX="455.0" layoutY="68.0" startX="123.0" startY="-63.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Polygon fx:id="sqrID" fill="#2197ff90" layoutX="455.0" layoutY="68.0" opacity="0.0" points="-26.0, 76.0, 118.0, 76.0, 118.0, -58.0, -26.0, -58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+
+
+
    </children>
 </AnchorPane>

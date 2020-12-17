@@ -6,12 +6,14 @@
 <AnchorPane fx:id="lineshaperoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LineShapeController">
    <children>
       <Line fx:id="line1" endX="32.0" fill="#32dbf0" layoutX="370.0" layoutY="100.0" startX="-75.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
-      <Line fx:id="line2" endX="32.0" fill="#8f0fff" layoutX="370.0" layoutY="100.0" startX="149.5" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
+      <Line fx:id="line2" endX="32.0" fill="#900dff" layoutX="370.0" layoutY="100.0" startX="149.5" stroke="#900dff" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="line3" endX="32.0" endY="-5.0" fill="#ff0181" layoutX="370.0" layoutY="100.0" startX="32.0" startY="-108.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
       <Line fx:id="line4" endX="32.0" endY="-2.5" fill="#fae100" layoutX="370.0" layoutY="100.0" startX="32.0" startY="103.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
-       <Line fx:id="line5" endX="32.0" fill="#8f0fff" layoutX="590.0" layoutY="100.0" startX="-68.0" stroke="#8f0fff" strokeLineCap="ROUND" strokeWidth="10.0" />
+       <Line fx:id="line5" endX="32.0" fill="#900dff" layoutX="590.0" layoutY="100.0" startX="-68.0" stroke="#900dff" strokeLineCap="ROUND" strokeWidth="10.0" />
        <Line fx:id="line6" endX="34.5" fill="#32dbf0" layoutX="590.0" layoutY="100.0" startX="138.0" stroke="#32dbf0" strokeLineCap="ROUND" strokeWidth="10.0" />
        <Line fx:id="line7" endX="37.0" endY="-5.0" fill="#ff0181" layoutX="590.0" layoutY="100.0" startX="37.0" startY="-105.0" stroke="#ff0181" strokeLineCap="ROUND" strokeWidth="10.0" />
        <Line fx:id="line8" endX="37.0" endY="-2.5" fill="#fae100" layoutX="590.0" layoutY="100.0" startX="37.0" startY="103.0" stroke="#fae100" strokeLineCap="ROUND" strokeWidth="10.0" />
+
+
    </children>
 </AnchorPane>

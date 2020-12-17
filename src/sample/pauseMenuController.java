@@ -17,6 +17,7 @@ import javafx.util.Duration;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.control.Label;
 
 public class pauseMenuController  implements Initializable {
     @FXML
@@ -24,6 +25,9 @@ public class pauseMenuController  implements Initializable {
 
     @FXML
     private ImageView circle1, circle2;
+
+    @FXML
+    public Label textField;
 
     public DataTable lastGameData;
 
@@ -56,7 +60,7 @@ public class pauseMenuController  implements Initializable {
         AnchorPane Pane = load.load();
         GamePlayController GPobj=load.getController();
         pauseRoot.getChildren().setAll(Pane);
-        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol);
+        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol,0);
     }
 
     @FXML

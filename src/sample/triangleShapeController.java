@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Shape;
 import javafx.scene.transform.Rotate;
 
 import javax.xml.crypto.dsig.Reference;
@@ -45,42 +46,64 @@ public class triangleShapeController extends Obstracle implements Initializable{
     }
 
 
-    @Override
-    public boolean checkColor(BallController ball) {
+//    @Override
+//    public boolean checkColor(BallController ball) {
+//
+//        if(ball.ballID.getFill().equals(tri1.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
+//            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            else
+//                return false;
+//        }
+//        else if(ball.ballID.getFill().equals(tri2.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
+//            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            else
+//                return false;
+//        }
+//        else if(ball.ballID.getFill().equals(tri3.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0) {
+//            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
+//                return true;
+//            }
+//            else
+//                return false;
+//        }
+//
+//        return false;
+//    }
 
-        if(ball.ballID.getFill().equals(tri1.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            else
-                return false;
+
+    @Override
+    public boolean checkColor(BallController obj){
+
+        Shape s1 = Shape.intersect(tri1,obj.ballID);
+        Shape s2 = Shape.intersect(tri2,obj.ballID);
+        Shape s3 = Shape.intersect(tri3,obj.ballID);
+        if(s1.getBoundsInParent().getWidth() != -1 && !(tri1.getFill().equals(obj.ballID.getFill()))){
+            return true;
         }
-        else if(ball.ballID.getFill().equals(tri2.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            else
-                return false;
+        else if(s2.getBoundsInParent().getWidth() != -1 && !(tri2.getFill().equals(obj.ballID.getFill()))){
+            return true;
         }
-        else if(ball.ballID.getFill().equals(tri3.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0) {
-            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-                return true;
-            }
-            else
-                return false;
+        else if(s3.getBoundsInParent().getWidth() != -1 && !(tri3.getFill().equals(obj.ballID.getFill()))){
+            return true;
         }
 
         return false;
     }
+
+
 
     @Override
     protected void movingSpeed() {

@@ -9,6 +9,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.util.Duration;
 import java.awt.*;
 import java.io.*;
@@ -31,7 +32,9 @@ public class GamePlayController implements Serializable {
     private AnchorPane playRoot;
 
     @FXML
-    public ImageView circleID;
+    public ImageView circleID,playID,playID1;
+
+    private DataTable lastGameData;
 
     BallController ball;
     circleShapeController obj;
@@ -48,11 +51,13 @@ public class GamePlayController implements Serializable {
 
     public void initialize() throws Exception{
 
+
         Obstracle.imageRotate(circleID,1,true);
+        playID.setVisible(false);
+        playID1.setVisible(true);
 
         String temp = Integer.toString(score);
         textField.setText(temp);
-
 
         FXMLLoader load1 = new FXMLLoader(getClass().getResource("Ball.fxml"));
         AnchorPane ballPane = load1.load();
@@ -172,13 +177,8 @@ public class GamePlayController implements Serializable {
 
             timer.stop();
             GameElements.addMusic("/Sound Effects/breakball1.wav");
+            continueGame();
 
-            FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
-            AnchorPane Pane = load.load();
-            GameOverController GOobj=load.getController();
-            playRoot.getChildren().setAll(Pane);
-            String temp = Integer.toString(score);
-            GOobj.textField.setText(temp);
         }
         if(color5 || color6 || color7 || color8){
             score++;
@@ -186,7 +186,7 @@ public class GamePlayController implements Serializable {
             textField.setText(temp);
         }
         if(color9 || color10 || color12){
-            String[] arr = new String[]{"#8f0fff","#ff0586","#fae100","#32e0f0"};
+            String[] arr = new String[]{"#900dffff","#32dbf0ff","#fae100ff","#ff0181ff"};
             Collections.shuffle(Arrays.asList(arr));
             ball.ballID.setFill(Paint.valueOf(arr[0]));
         }
@@ -259,70 +259,70 @@ public class GamePlayController implements Serializable {
 
     }
 
-    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr,int ballcol){
+    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr,int ballcol, int add){
 
-        obj.arc1.setLayoutY(obs.get(0));
-        obj.arc2.setLayoutY(obs.get(0));
-        obj.arc3.setLayoutY(obs.get(0));
-        obj.arc4.setLayoutY(obs.get(0));
-        obj.innerPart.setLayoutY(obs.get(0));
-        starObj1.star1.setLayoutY(star.get(0));
-        starObj1.star2.setLayoutY(star.get(0));
-        CSobj1.arc1.setLayoutY(col.get(0));
-        CSobj1.arc2.setLayoutY(col.get(0));
-        CSobj1.arc3.setLayoutY(col.get(0));
-        CSobj1.arc4.setLayoutY(col.get(0));
+        obj.arc1.setLayoutY(obs.get(0)+add);
+        obj.arc2.setLayoutY(obs.get(0)+add);
+        obj.arc3.setLayoutY(obs.get(0)+add);
+        obj.arc4.setLayoutY(obs.get(0)+add);
+        obj.innerPart.setLayoutY(obs.get(0)+add);
+        starObj1.star1.setLayoutY(star.get(0)+add);
+        starObj1.star2.setLayoutY(star.get(0)+add);
+        CSobj1.arc1.setLayoutY(col.get(0)+add);
+        CSobj1.arc2.setLayoutY(col.get(0)+add);
+        CSobj1.arc3.setLayoutY(col.get(0)+add);
+        CSobj1.arc4.setLayoutY(col.get(0)+add);
 
-        obj1.line1.setLayoutY(obs.get(1));
-        obj1.line2.setLayoutY(obs.get(1));
-        obj1.line3.setLayoutY(obs.get(1));
-        obj1.line4.setLayoutY(obs.get(1));
-        obj1.sqrID.setLayoutY(obs.get(1));
-        starObj2.star1.setLayoutY(star.get(1));
-        starObj2.star2.setLayoutY(star.get(1));
-        CSobj2.arc1.setLayoutY(col.get(1));
-        CSobj2.arc2.setLayoutY(col.get(1));
-        CSobj2.arc3.setLayoutY(col.get(1));
-        CSobj2.arc4.setLayoutY(col.get(1));
+        obj1.line1.setLayoutY(obs.get(1)+add);
+        obj1.line2.setLayoutY(obs.get(1)+add);
+        obj1.line3.setLayoutY(obs.get(1)+add);
+        obj1.line4.setLayoutY(obs.get(1)+add);
+        obj1.sqrID.setLayoutY(obs.get(1)+add);
+        starObj2.star1.setLayoutY(star.get(1)+add);
+        starObj2.star2.setLayoutY(star.get(1)+add);
+        CSobj2.arc1.setLayoutY(col.get(1)+add);
+        CSobj2.arc2.setLayoutY(col.get(1)+add);
+        CSobj2.arc3.setLayoutY(col.get(1)+add);
+        CSobj2.arc4.setLayoutY(col.get(1)+add);
 
-        obj2.tri1.setLayoutY(obs.get(2));
-        obj2.tri2.setLayoutY(obs.get(2));
-        obj2.tri3.setLayoutY(obs.get(2));
-        obj2.innerTri.setLayoutY(obs.get(2));
-        starObj3.star1.setLayoutY(star.get(2));
-        starObj3.star2.setLayoutY(star.get(2));
-        CSobj3.arc1.setLayoutY(col.get(2));
-        CSobj3.arc2.setLayoutY(col.get(2));
-        CSobj3.arc3.setLayoutY(col.get(2));
-        CSobj3.arc4.setLayoutY(col.get(2));
+        obj2.tri1.setLayoutY(obs.get(2)+add);
+        obj2.tri2.setLayoutY(obs.get(2)+add);
+        obj2.tri3.setLayoutY(obs.get(2)+add);
+        obj2.innerTri.setLayoutY(obs.get(2)+add);
+        starObj3.star1.setLayoutY(star.get(2)+add);
+        starObj3.star2.setLayoutY(star.get(2)+add);
+        CSobj3.arc1.setLayoutY(col.get(2)+add);
+        CSobj3.arc2.setLayoutY(col.get(2)+add);
+        CSobj3.arc3.setLayoutY(col.get(2)+add);
+        CSobj3.arc4.setLayoutY(col.get(2)+add);
 
-        obj3.line1.setLayoutY(obs.get(3));
-        obj3.line2.setLayoutY(obs.get(3));
-        obj3.line3.setLayoutY(obs.get(3));
-        obj3.line4.setLayoutY(obs.get(3));
-        obj3.line5.setLayoutY(obs.get(3));
-        obj3.line6.setLayoutY(obs.get(3));
-        obj3.line7.setLayoutY(obs.get(3));
-        obj3.line8.setLayoutY(obs.get(3));
-        starObj4.star1.setLayoutY(star.get(3));
-        starObj4.star2.setLayoutY(star.get(3));
-        CSobj4.arc1.setLayoutY(col.get(3));
-        CSobj4.arc2.setLayoutY(col.get(3));
-        CSobj4.arc3.setLayoutY(col.get(3));
-        CSobj4.arc4.setLayoutY(col.get(3));
+        obj3.line1.setLayoutY(obs.get(3)+add);
+        obj3.line2.setLayoutY(obs.get(3)+add);
+        obj3.line3.setLayoutY(obs.get(3)+add);
+        obj3.line4.setLayoutY(obs.get(3)+add);
+        obj3.line5.setLayoutY(obs.get(3)+add);
+        obj3.line6.setLayoutY(obs.get(3)+add);
+        obj3.line7.setLayoutY(obs.get(3)+add);
+        obj3.line8.setLayoutY(obs.get(3)+add);
+        starObj4.star1.setLayoutY(star.get(3)+add);
+        starObj4.star2.setLayoutY(star.get(3)+add);
+        CSobj4.arc1.setLayoutY(col.get(3)+add);
+        CSobj4.arc2.setLayoutY(col.get(3)+add);
+        CSobj4.arc3.setLayoutY(col.get(3)+add);
+        CSobj4.arc4.setLayoutY(col.get(3)+add);
 
         ball.ballID.setLayoutY(ballPos);
         if(ballcol==1){
-            ball.ballID.setFill(Paint.valueOf("#8f0fff"));
+            ball.ballID.setFill(Paint.valueOf("#900dffff"));
         }
         if(ballcol==2){
-            ball.ballID.setFill(Paint.valueOf("#ff0586"));
+            ball.ballID.setFill(Paint.valueOf("#ff0181ff"));
         }
         if(ballcol==3){
-            ball.ballID.setFill(Paint.valueOf("#fae100"));
+            ball.ballID.setFill(Paint.valueOf("#fae100ff"));
         }
         if(ballcol==4){
-            ball.ballID.setFill(Paint.valueOf("#32e0f0"));
+            ball.ballID.setFill(Paint.valueOf("#32dbf0ff"));
         }
         score = scr;
         String temp = Integer.toString(scr);
@@ -351,16 +351,16 @@ public class GamePlayController implements Serializable {
         stars.add(starObj4.star1.getLayoutY());
 
         int ballcol =0;
-        if(ball.ballID.getFill().equals(Paint.valueOf("#8f0fff"))){
+        if(ball.ballID.getFill().equals(Paint.valueOf("#900dffff"))){
             ballcol=1;
         }
-        if(ball.ballID.getFill().equals(Paint.valueOf("#ff0586"))){
+        if(ball.ballID.getFill().equals(Paint.valueOf("#ff0181ff"))){
             ballcol=2;
         }
-        if(ball.ballID.getFill().equals(Paint.valueOf("#fae100"))){
+        if(ball.ballID.getFill().equals(Paint.valueOf("#fae100ff"))){
             ballcol=3;
         }
-        if(ball.ballID.getFill().equals(Paint.valueOf("#32e0f0"))){
+        if(ball.ballID.getFill().equals(Paint.valueOf("#32dbf0ff"))){
             ballcol=4;
         }
 
@@ -370,12 +370,13 @@ public class GamePlayController implements Serializable {
         pauseMenuController GPobj=load.getController();
         playRoot.getChildren().setAll(Pane);
         GPobj.lastGameData = oj;
+        String temp = Integer.toString(score);
+        GPobj.textField.setText(temp);
 
     }
 
     void continueGame() throws Exception{
         timer.stop();
-        GameElements.addMusic("/Sound Effects/button.wav");
 
         obstacles.add(obj.arc1.getLayoutY());//circle
         obstacles.add(obj1.line1.getLayoutY());//square
@@ -407,11 +408,13 @@ public class GamePlayController implements Serializable {
         }
 
         DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol);
-        FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
+        FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
         AnchorPane Pane = load.load();
-        pauseMenuController GPobj=load.getController();
+        GameOverController GOobj=load.getController();
         playRoot.getChildren().setAll(Pane);
-        GPobj.lastGameData = oj;
+        GOobj.lastGameData = oj;
+        String temp = Integer.toString(score);
+        GOobj.textField.setText(temp);
 
     }
 
@@ -424,7 +427,7 @@ public class GamePlayController implements Serializable {
                     new FileInputStream("SavedGames.txt"));
             s1 = (DataTableObj) in.readObject();
 
-            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score,s1.gameData.get(index).ballCol);
+            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score,s1.gameData.get(index).ballCol,0);
             if(s1.gameData.size()>0){
 
                 s1.gameData.remove(s1.gameData.get(index));

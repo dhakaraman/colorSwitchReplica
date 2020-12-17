@@ -7,22 +7,27 @@
 
 <AnchorPane fx:id="playRoot" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePlayController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playID1" fitHeight="600.0" fitWidth="1024.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/PlayBackGroundAi.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <ImageView fx:id="circleID" fitHeight="53.0" fitWidth="47.0" layoutX="96.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playID" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/Circle111.png" />
+            <Image url="@../assets/AiPlayBackGroundWhite1.png" />
          </image>
       </ImageView>
-      <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="47.0" prefWidth="115.0" text="0" textFill="#fffafa">
+      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+      <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="108.0" prefWidth="158.0" text="0" textAlignment="CENTER" textFill="#fffafa">
          <font>
             <Font size="74.0" />
          </font>
       </Label>
+      <ImageView fx:id="circleID" fitHeight="43.0" fitWidth="46.0" layoutX="97.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Circle.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
