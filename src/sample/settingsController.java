@@ -58,7 +58,6 @@ public class settingsController {
         settingRoot.getChildren().setAll(pane);
     }
     public void backToMain() throws Exception{
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("Main.fxml"));
-        settingRoot.getChildren().setAll(pane);
+        MainPageController.primaryStage.close();
     }
 }

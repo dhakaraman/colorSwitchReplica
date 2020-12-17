@@ -31,6 +31,7 @@ public class MainPageController{
     @FXML
     private ImageView linex1,linex2,settings;
 
+    public static Stage primaryStage;
 
     public void initialize() throws IOException {
 
@@ -82,7 +83,7 @@ public class MainPageController{
 
     @FXML
     void settingPane(MouseEvent event) throws IOException {
-        Stage primaryStage = new Stage();
+        primaryStage = new Stage();
         Parent mainPage=FXMLLoader.load(getClass().getResource("settings.fxml"));
         Scene scene = new Scene(mainPage,600,340);
         primaryStage.setTitle("Settings");
