@@ -5,6 +5,7 @@ import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -30,6 +31,9 @@ public class settingsController {
     @FXML
     private Slider slider;
 
+    @FXML
+    private AnchorPane settingRoot;
+
     public void initialize() throws Exception {
 //        Media sound = new Media(GameElements.class.getResource("/Sound Effects/ColorSwitchGame.mp3").toString());
 //        MediaPlayer mediaPlayer = new MediaPlayer(sound);
@@ -47,5 +51,14 @@ public class settingsController {
             }
         });
 
+    }
+
+    public void themeManager() throws Exception{
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("Themes.fxml"));
+        settingRoot.getChildren().setAll(pane);
+    }
+    public void backToMain() throws Exception{
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("Main.fxml"));
+        settingRoot.getChildren().setAll(pane);
     }
 }

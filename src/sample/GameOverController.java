@@ -78,7 +78,7 @@ public class GameOverController{
             AnchorPane Pane = load.load();
             GamePlayController GPobj = load.getController();
             OverRoot.getChildren().setAll(Pane);
-            GPobj.initializeData(lastGameData.obstacles, lastGameData.colorSwitch, lastGameData.stars, lastGameData.ballPos, lastGameData.score-4, lastGameData.ballCol, -200);
+            GPobj.initializeData(lastGameData.obstacles, lastGameData.colorSwitch, lastGameData.stars, lastGameData.ballPos, lastGameData.score-4, lastGameData.ballCol, -200, lastGameData.backgroImageID);
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR, "Insuffiecient stars! You must have at least 4 stars.", ButtonType.OK);

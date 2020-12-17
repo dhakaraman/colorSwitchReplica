@@ -20,14 +20,16 @@ public class DataTable implements Serializable {
     double ballPos;
     int ballCol;
     int score;
+    int backgroImageID;
 
-    public DataTable(ArrayList<Double> obstacles, ArrayList<Double> colorSwitch, ArrayList<Double> stars, double ballPos, int score,int ballCol){
+    public DataTable(ArrayList<Double> obstacles, ArrayList<Double> colorSwitch, ArrayList<Double> stars, double ballPos, int score,int ballCol,int backgroImageID){
         this.obstacles  = obstacles;
         this.colorSwitch = colorSwitch;
         this.stars = stars;
         this.ballPos = ballPos;
         this.ballCol = ballCol;
         this.score = score;
+        this.backgroImageID=backgroImageID;
     }
 
 }

@@ -84,7 +84,7 @@ public class MainPageController{
     void settingPane(MouseEvent event) throws IOException {
         Stage primaryStage = new Stage();
         Parent mainPage=FXMLLoader.load(getClass().getResource("settings.fxml"));
-        Scene scene = new Scene(mainPage,500,400);
+        Scene scene = new Scene(mainPage,600,340);
         primaryStage.setTitle("Settings");
         primaryStage.setScene(scene);
         primaryStage.show();

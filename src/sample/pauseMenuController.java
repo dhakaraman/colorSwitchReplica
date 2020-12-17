@@ -60,7 +60,7 @@ public class pauseMenuController  implements Initializable {
         AnchorPane Pane = load.load();
         GamePlayController GPobj=load.getController();
         pauseRoot.getChildren().setAll(Pane);
-        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol,0);
+        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol,0, lastGameData.backgroImageID );
     }
 
     @FXML

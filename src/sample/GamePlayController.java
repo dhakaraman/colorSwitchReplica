@@ -19,6 +19,8 @@ import java.util.Collections;
 
 public class GamePlayController implements Serializable {
 
+    public static int id=0;
+
     @FXML
     AnimationTimer timer;
 
@@ -51,14 +53,9 @@ public class GamePlayController implements Serializable {
 
     public void initialize() throws Exception{
 
-
+        setImage();
         Obstracle.imageRotate(circleID,1,true);
-        playID1.setVisible(true);
-        playID2.setVisible(false);
-        playID3.setVisible(false);
-        playID4.setVisible(false);
-        playID5.setVisible(false);
-        playID6.setVisible(false);
+
 
         String temp = Integer.toString(score);
         textField.setText(temp);
@@ -144,7 +141,7 @@ public class GamePlayController implements Serializable {
         timer.start();
     }
 
-    public void setImage(int id){
+    public void setImage(){
         if(id==1){
             playID1.setVisible(true);
             playID2.setVisible(false);
@@ -193,6 +190,14 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(false);
             playID5.setVisible(false);
             playID6.setVisible(true);
+        }
+        else{
+            playID1.setVisible(true);
+            playID2.setVisible(false);
+            playID3.setVisible(false);
+            playID4.setVisible(false);
+            playID5.setVisible(false);
+            playID6.setVisible(false);
         }
     }
 
@@ -315,7 +320,7 @@ public class GamePlayController implements Serializable {
 
     }
 
-    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr,int ballcol, int add){
+    public void initializeData(ArrayList<Double> obs, ArrayList<Double> col, ArrayList<Double> star, double ballPos, int scr,int ballcol, int add,int backGroImageID){
 
         obj.arc1.setLayoutY(obs.get(0)+add);
         obj.arc2.setLayoutY(obs.get(0)+add);
@@ -380,6 +385,9 @@ public class GamePlayController implements Serializable {
         if(ballcol==4){
             ball.ballID.setFill(Paint.valueOf("#32dbf0ff"));
         }
+
+        id=backGroImageID;
+        setImage();
         score = scr;
         String temp = Integer.toString(scr);
         textField.setText(temp);
@@ -420,7 +428,9 @@ public class GamePlayController implements Serializable {
             ballcol=4;
         }
 
-        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol);
+        int backGroImageID=id;
+
+        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol,backGroImageID);
         FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
         AnchorPane Pane = load.load();
         pauseMenuController GPobj=load.getController();
@@ -462,8 +472,9 @@ public class GamePlayController implements Serializable {
         if(ball.ballID.getFill().equals(Paint.valueOf("#32e0f0"))){
             ballcol=4;
         }
+        int backGroImageID=id;
 
-        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol);
+        DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol,backGroImageID);
         FXMLLoader load = new FXMLLoader(getClass().getResource("GameOver.fxml"));
         AnchorPane Pane = load.load();
         GameOverController GOobj=load.getController();
@@ -483,7 +494,7 @@ public class GamePlayController implements Serializable {
                     new FileInputStream("SavedGames.txt"));
             s1 = (DataTableObj) in.readObject();
 
-            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score,s1.gameData.get(index).ballCol,0);
+            initializeData(s1.gameData.get(index).obstacles,s1.gameData.get(index).colorSwitch,s1.gameData.get(index).stars,s1.gameData.get(index).ballPos,s1.gameData.get(index).score,s1.gameData.get(index).ballCol,0,s1.gameData.get(index).backgroImageID);
             if(s1.gameData.size()>0){
 
                 s1.gameData.remove(s1.gameData.get(index));

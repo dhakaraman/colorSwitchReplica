@@ -48,6 +48,7 @@ public class loadMenuController {
         transition2.setCycleCount(50);
         transition2.setAutoReverse(true);
         transition2.play();
+
     }
 
     public void deleteGames() throws Exception{
