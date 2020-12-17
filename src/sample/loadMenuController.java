@@ -61,10 +61,8 @@ public class loadMenuController {
                 Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION, "Your saved games have been Deleted! " + " !", ButtonType.OK);
                 alert2.showAndWait();
                 if(alert2.getResult()==ButtonType.OK){
-                    GameElements.addMusic("/Sound Effects/button.wav");
                     AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
                     loadRoot.getChildren().setAll(pane);
-                    alert2.hide();
                 }
                 alert.hide();
 

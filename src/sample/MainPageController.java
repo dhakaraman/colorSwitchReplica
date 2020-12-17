@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.animation.RotateTransition;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -72,6 +76,16 @@ public class MainPageController{
     void exitGame(MouseEvent event) {
         GameElements.addMusic("/Sound Effects/button.wav");
         System.exit(0);
+    }
+
+    @FXML
+    void settingPane(MouseEvent event) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent mainPage=FXMLLoader.load(getClass().getResource("settings.fxml"));
+        Scene scene = new Scene(mainPage,500,400);
+        primaryStage.setTitle("Settings");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
 }

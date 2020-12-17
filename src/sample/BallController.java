@@ -32,7 +32,7 @@ public class BallController extends GameElements {
 
     @FXML
     public void jump(ActionEvent event) throws IOException {
-        //addMusic("/Sound Effects/jump.wav");
+        addMusic("/Sound Effects/jump.wav");
         Bounds bounds = BallRoot.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(200),
                 new KeyValue(ballID.layoutYProperty(), ballID.getLayoutY()-speed)));
@@ -46,14 +46,6 @@ public class BallController extends GameElements {
 
     }
 
-//    public void addMusic() {
-//        Media sound = new Media(getClass().getResource("/Sound Effects/jump.wav").toString());
-//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.setAutoPlay(true);
-//        mediaPlayer.setStartTime(Duration.seconds(0));
-//        mediaPlayer.setStopTime(Duration.seconds(1));
-//        mediaPlayer.play();
-//    }
 
     public void setSpeed(double speed){
         this.speed = speed;
