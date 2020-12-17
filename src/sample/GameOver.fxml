@@ -30,11 +30,11 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Button id="bevel-grey" layoutX="794.0" layoutY="175.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="126.0" stylesheets="@Style.css" text="Revive" textAlignment="CENTER">
-         <font>
-            <Font size="22.0" />
-         </font></Button>
       <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="387.0" layoutY="198.0" onMouseClicked="#revive" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="label" layoutX="640.0" layoutY="240.0" prefHeight="160.0" prefWidth="378.0" textFill="#ea8052">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
 
 
 

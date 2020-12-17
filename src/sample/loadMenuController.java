@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -31,6 +33,7 @@ public class loadMenuController {
 
     ArrayList<DataTable> loadedGames;
 
+    private DataTableObj game;
 
     public void initialize() throws Exception{
         listOfSavedGames();
@@ -49,10 +52,37 @@ public class loadMenuController {
 
     public void deleteGames() throws Exception{
         File file = new File("SavedGames.txt");
-        if(file.delete() && file.exists()){
-            System.out.println("SavedGames.txt File deleted");
+        if(file.exists() && game.gameData.size()>0){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete " + " ?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.YES) {
+                file.delete();
+                Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION, "Your saved games have been Deleted! " + " !", ButtonType.OK);
+                alert2.showAndWait();
+                if(alert2.getResult()==ButtonType.OK){
+                    GameElements.addMusic("/Sound Effects/button.wav");
+                    AnchorPane pane= FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+                    loadRoot.getChildren().setAll(pane);
+                    alert2.hide();
+                }
+                alert.hide();
+
+            }
+            else if(alert.getResult()==ButtonType.NO){
+                alert.hide();
+            }
+            else if(alert.getResult()==ButtonType.CANCEL){
+                alert.hide();
+            }
         }
         else{
+            Alert alert = new Alert(Alert.AlertType.ERROR, "You Don't have saved games " + " !", ButtonType.OK);
+            alert.showAndWait();
+            if(alert.getResult()==ButtonType.OK){
+                alert.hide();
+            }
+
             GameElements.addMusic("/Sound Effects/error.wav");
         }
     }
@@ -84,7 +114,7 @@ public class loadMenuController {
             in = new ObjectInputStream(
                     new FileInputStream("SavedGames.txt"));
             obj = (DataTableObj) in.readObject();
-
+            game=obj;
             for(int i=0;i<obj.gameData.size();i++){
                 textField.getItems().add(i+1+". Your score = "+ obj.gameData.get(i).score);
             }

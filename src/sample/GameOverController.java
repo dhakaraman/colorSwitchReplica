@@ -5,8 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -14,7 +13,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Popup;
 import javafx.util.Duration;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 import javax.swing.*;
@@ -36,6 +34,9 @@ public class GameOverController{
 
     @FXML
     public Button button;
+
+    @FXML
+    public Label label;
 
     public DataTable lastGameData;
 
@@ -72,12 +73,20 @@ public class GameOverController{
     @FXML
     public void revive() throws Exception{
         GameElements.addMusic("/Sound Effects/button.wav");
-        FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
-        AnchorPane Pane = load.load();
-        GamePlayController GPobj=load.getController();
-        OverRoot.getChildren().setAll(Pane);
-        GPobj.initializeData(lastGameData.obstacles,lastGameData.colorSwitch,lastGameData.stars,lastGameData.ballPos,lastGameData.score,lastGameData.ballCol,-200);
-
+        if(lastGameData.score>=4) {
+            FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
+            AnchorPane Pane = load.load();
+            GamePlayController GPobj = load.getController();
+            OverRoot.getChildren().setAll(Pane);
+            GPobj.initializeData(lastGameData.obstacles, lastGameData.colorSwitch, lastGameData.stars, lastGameData.ballPos, lastGameData.score-4, lastGameData.ballCol, -200);
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Insuffiecient stars! You must have at least 4 stars.", ButtonType.OK);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.OK) {
+                alert.hide();
+            }
+        }
     }
 
     @FXML
