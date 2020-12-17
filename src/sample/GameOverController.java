@@ -1,26 +1,11 @@
 package sample;
 
-import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.transform.Rotate;
-import javafx.stage.Popup;
-import javafx.util.Duration;
 import javafx.scene.image.ImageView;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Random;
-import java.util.ResourceBundle;
 
 public class GameOverController{
     @FXML
@@ -43,8 +28,8 @@ public class GameOverController{
 
     public void initialize() {
 
-        Obstracle.imageRotate(circle1,1,true);
-        Obstracle.imageRotate(circle2,1,true);
+        Obstacle.imageRotate(circle1,1,true);
+        Obstacle.imageRotate(circle2,1,true);
 
     }
 

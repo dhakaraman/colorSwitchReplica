@@ -1,13 +1,11 @@
 package sample;
-import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 import javafx.scene.transform.Rotate;
 
-public class circleShapeController extends Obstracle {
+public class CircleShapeController extends Obstacle {
 
     private double radius;
 

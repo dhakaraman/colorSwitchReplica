@@ -1,13 +1,10 @@
 package sample;
 
-import javafx.animation.RotateTransition;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -18,9 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 public class MainPageController{
 
@@ -37,7 +32,7 @@ public class MainPageController{
 
     public void initialize() throws IOException {
 
-        Obstracle.imageRotate(settings,-1,true);
+        Obstacle.imageRotate(settings,-1,true);
 
         File file = new File("SavedGames.txt");
         if(!file.exists()){
@@ -53,13 +48,13 @@ public class MainPageController{
             }
         }
 
-        Obstracle.imageRotate(circle1,1,true);
-        Obstracle.imageRotate(circle2,1,true);
-        Obstracle.imageRotate(circle3,-1,true);
-        Obstracle.imageRotate(circle4,1,true);
-        Obstracle.imageRotate(circle5,1,true);
-        Obstracle.imageRotate(linex1,-1,true);
-        Obstracle.imageRotate(linex2,1,true);
+        Obstacle.imageRotate(circle1,1,true);
+        Obstacle.imageRotate(circle2,1,true);
+        Obstacle.imageRotate(circle3,-1,true);
+        Obstacle.imageRotate(circle4,1,true);
+        Obstacle.imageRotate(circle5,1,true);
+        Obstacle.imageRotate(linex1,-1,true);
+        Obstacle.imageRotate(linex2,1,true);
 
     }
 
@@ -73,7 +68,7 @@ public class MainPageController{
     @FXML
     void loadMenu(MouseEvent event) throws Exception{
         GameElements.addMusic("/Sound Effects/button.wav");
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("loadMenu.fxml"));
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("LoadMenu.fxml"));
         mainRoot.getChildren().setAll(pane);
     }
 
@@ -87,7 +82,7 @@ public class MainPageController{
     void settingPane(MouseEvent event) throws IOException {
         GameElements.addMusic("/Sound Effects/button.wav");
         primaryStage = new Stage();
-        Parent mainPage=FXMLLoader.load(getClass().getResource("settings.fxml"));
+        Parent mainPage=FXMLLoader.load(getClass().getResource("Settings.fxml"));
         Scene scene = new Scene(mainPage,600,340);
         primaryStage.setTitle("Settings");
         primaryStage.setScene(scene);

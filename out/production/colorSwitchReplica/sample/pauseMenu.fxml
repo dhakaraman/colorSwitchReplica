@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pauseRoot" prefHeight="200.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.pauseMenuController">
+<AnchorPane fx:id="pauseRoot" prefHeight="200.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PauseMenuController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
          <image>

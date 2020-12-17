@@ -7,20 +7,13 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 import javafx.scene.transform.Rotate;
 
-import javax.xml.crypto.dsig.Reference;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.animation.*;
-import javafx.fxml.FXML;
-import javafx.geometry.Point3D;
-import javafx.scene.shape.Arc;
+
 import javafx.scene.shape.Line;
-import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
 
 
-
-public class triangleShapeController extends Obstracle implements Initializable{
+public class TriangleShapeController extends Obstacle implements Initializable{
 
     protected double side;
 

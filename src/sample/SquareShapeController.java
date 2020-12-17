@@ -1,20 +1,16 @@
 package sample;
-import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Point3D;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Arc;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class sqaureShapeController extends Obstracle implements Initializable {
+public class SquareShapeController extends Obstacle implements Initializable {
 
     protected double side;
 

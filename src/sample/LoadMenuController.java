@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class loadMenuController {
+public class LoadMenuController {
     @FXML
     private AnchorPane loadRoot;
 

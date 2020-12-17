@@ -1,20 +1,15 @@
 package sample;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LineShapeController extends Obstracle implements Initializable {
+public class LineShapeController extends Obstacle implements Initializable {
 
     @FXML
     public Line line1, line2,line3,line4,line5,line6,line7,line8;

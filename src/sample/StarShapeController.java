@@ -3,15 +3,13 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Polygon;
 import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class starShapeController extends Obstracle implements Initializable {
+public class StarShapeController extends Obstacle implements Initializable {
     @FXML
     public AnchorPane starRoot;
 

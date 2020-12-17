@@ -9,9 +9,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-import javafx.util.Duration;
-import java.awt.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,13 +37,13 @@ public class GamePlayController implements Serializable {
     private DataTable lastGameData;
 
     BallController ball;
-    circleShapeController obj;
-    sqaureShapeController obj1;
-    triangleShapeController obj2;
+    CircleShapeController obj;
+    SquareShapeController obj1;
+    TriangleShapeController obj2;
     LineShapeController obj3;
     ColorSwitchController CSobj1,CSobj2,CSobj3,CSobj4;
     public int score=0;
-    starShapeController starObj1, starObj2, starObj3, starObj4;
+    StarShapeController starObj1, starObj2, starObj3, starObj4;
 
     ArrayList<Double> obstacles = new ArrayList<>();
     ArrayList<Double> colorSwitch = new ArrayList<>();
@@ -54,7 +52,7 @@ public class GamePlayController implements Serializable {
     public void initialize() throws Exception{
 
         setImage();
-        Obstracle.imageRotate(circleID,1,true);
+        Obstacle.imageRotate(circleID,1,true);
 
 
         String temp = Integer.toString(score);
@@ -65,7 +63,7 @@ public class GamePlayController implements Serializable {
         ball = load1.getController();
         playRoot.getChildren().addAll(ballPane);
 
-        FXMLLoader load2 = new FXMLLoader(getClass().getResource("circleShape.fxml"));
+        FXMLLoader load2 = new FXMLLoader(getClass().getResource("CircleShape.fxml"));
         AnchorPane ciclePane = load2.load();
         obj=load2.getController();
         playRoot.getChildren().addAll(ciclePane);
@@ -75,32 +73,32 @@ public class GamePlayController implements Serializable {
         obj3=load3.getController();
         playRoot.getChildren().addAll(linePane);
 
-        FXMLLoader load4 = new FXMLLoader(getClass().getResource("squareShape.fxml"));
+        FXMLLoader load4 = new FXMLLoader(getClass().getResource("SquareShape.fxml"));
         AnchorPane squarePane = load4.load();
         obj1=load4.getController();
         playRoot.getChildren().addAll(squarePane);
 
-        FXMLLoader load5 = new FXMLLoader(getClass().getResource("triangleShape.fxml"));
+        FXMLLoader load5 = new FXMLLoader(getClass().getResource("TriangleShape.fxml"));
         AnchorPane trianglePane = load5.load();
         obj2=load5.getController();
         playRoot.getChildren().addAll(trianglePane);
 
-        FXMLLoader load6 = new FXMLLoader(getClass().getResource("starShape.fxml"));
+        FXMLLoader load6 = new FXMLLoader(getClass().getResource("StarShape.fxml"));
         AnchorPane starPane1 = load6.load();
         starObj1=load6.getController();
         playRoot.getChildren().addAll(starPane1);
 
-        FXMLLoader load7 = new FXMLLoader(getClass().getResource("starShape.fxml"));
+        FXMLLoader load7 = new FXMLLoader(getClass().getResource("StarShape.fxml"));
         AnchorPane starPane2 = load7.load();
         starObj2=load7.getController();
         playRoot.getChildren().addAll(starPane2);
 
-        FXMLLoader load8 = new FXMLLoader(getClass().getResource("starShape.fxml"));
+        FXMLLoader load8 = new FXMLLoader(getClass().getResource("StarShape.fxml"));
         AnchorPane starPane3 = load8.load();
         starObj3=load8.getController();
         playRoot.getChildren().addAll(starPane3);
 
-        FXMLLoader load9 = new FXMLLoader(getClass().getResource("starShape.fxml"));
+        FXMLLoader load9 = new FXMLLoader(getClass().getResource("StarShape.fxml"));
         AnchorPane starPane4 = load9.load();
         starObj4=load9.getController();
         playRoot.getChildren().addAll(starPane4);
@@ -437,9 +435,9 @@ public class GamePlayController implements Serializable {
         int backGroImageID=id;
 
         DataTable oj = new DataTable(obstacles,colorSwitch,stars,ball.ballID.getLayoutY(),score,ballcol,backGroImageID);
-        FXMLLoader load = new FXMLLoader(getClass().getResource("pauseMenu.fxml"));
+        FXMLLoader load = new FXMLLoader(getClass().getResource("PauseMenu.fxml"));
         AnchorPane Pane = load.load();
-        pauseMenuController GPobj=load.getController();
+        PauseMenuController GPobj=load.getController();
         playRoot.getChildren().setAll(Pane);
         GPobj.lastGameData = oj;
         String temp = Integer.toString(score);

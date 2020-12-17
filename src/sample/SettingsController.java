@@ -28,7 +28,7 @@ import javafx.util.Duration;
 import java.awt.*;
 
 
-public class settingsController {
+public class SettingsController {
     @FXML
     private Slider slider;
 

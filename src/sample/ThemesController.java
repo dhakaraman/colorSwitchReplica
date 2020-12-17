@@ -7,8 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.effect.Glow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -33,7 +31,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 1;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -47,7 +45,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 2;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -61,7 +59,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 3;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -75,7 +73,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 4;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -89,7 +87,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 5;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -103,7 +101,7 @@ public class ThemesController implements Initializable {
         alert.showAndWait();
         if(alert.getResult()==ButtonType.YES) {
             GamePlayController.id = 6;
-            AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+            AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
             themeRoot.getChildren().setAll(pane);
         }
         else if(alert.getResult()==ButtonType.NO)
@@ -114,7 +112,7 @@ public class ThemesController implements Initializable {
 
     public void backToSetting() throws Exception{
         GameElements.addMusic("/Sound Effects/button.wav");
-        AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
+        AnchorPane pane= FXMLLoader.load(getClass().getResource("Settings.fxml"));
         themeRoot.getChildren().setAll(pane);
     }
 
