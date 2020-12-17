@@ -52,7 +52,10 @@
             <Image url="@../assets/Circle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="settings" fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#settingPane"/>
+      <ImageView fx:id="settings" fitHeight="79.0" fitWidth="82.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#settingPane" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/SettingButton.png" />
+         </image></ImageView>
 
    </children>
 </AnchorPane>

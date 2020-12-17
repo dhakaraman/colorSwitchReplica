@@ -12,12 +12,30 @@
             <Image url="@../assets/PlayBackGroundAi.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="playID" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playID2" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/AiPlayBackGroundWhite1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playID3" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundBlackandWhite.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playID4" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundBlue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playID5" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundGrey.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playID6" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundPink.png" />
+         </image>
       </ImageView>
       <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="108.0" prefWidth="158.0" text="0" textAlignment="CENTER" textFill="#fffafa">
          <font>
@@ -28,6 +46,8 @@
          <image>
             <Image url="@../assets/Circle.png" />
          </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="878.0" layoutY="6.0" onMouseClicked="#pauseGame" pickOnBounds="true" preserveRatio="true">
       </ImageView>
    </children>
 </AnchorPane>

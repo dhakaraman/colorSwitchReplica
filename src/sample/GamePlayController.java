@@ -32,7 +32,7 @@ public class GamePlayController implements Serializable {
     private AnchorPane playRoot;
 
     @FXML
-    public ImageView circleID,playID,playID1;
+    public ImageView circleID,playID1,playID2,playID3,playID4,playID5,playID6;
 
     private DataTable lastGameData;
 
@@ -53,8 +53,12 @@ public class GamePlayController implements Serializable {
 
 
         Obstracle.imageRotate(circleID,1,true);
-        playID.setVisible(false);
         playID1.setVisible(true);
+        playID2.setVisible(false);
+        playID3.setVisible(false);
+        playID4.setVisible(false);
+        playID5.setVisible(false);
+        playID6.setVisible(false);
 
         String temp = Integer.toString(score);
         textField.setText(temp);
@@ -138,6 +142,58 @@ public class GamePlayController implements Serializable {
             }
         };
         timer.start();
+    }
+
+    public void setImage(int id){
+        if(id==1){
+            playID1.setVisible(true);
+            playID2.setVisible(false);
+            playID3.setVisible(false);
+            playID4.setVisible(false);
+            playID5.setVisible(false);
+            playID6.setVisible(false);
+
+        }
+        else if(id==2){
+            playID1.setVisible(false);
+            playID2.setVisible(true);
+            playID3.setVisible(false);
+            playID4.setVisible(false);
+            playID5.setVisible(false);
+            playID6.setVisible(false);
+        }
+        else if(id==3){
+            playID1.setVisible(false);
+            playID2.setVisible(false);
+            playID3.setVisible(true);
+            playID4.setVisible(false);
+            playID5.setVisible(false);
+            playID6.setVisible(false);
+        }
+        else if(id==4){
+            playID1.setVisible(false);
+            playID2.setVisible(false);
+            playID3.setVisible(false);
+            playID4.setVisible(true);
+            playID5.setVisible(false);
+            playID6.setVisible(false);
+        }
+        else if(id==5){
+            playID1.setVisible(false);
+            playID2.setVisible(false);
+            playID3.setVisible(false);
+            playID4.setVisible(false);
+            playID5.setVisible(true);
+            playID6.setVisible(false);
+        }
+        else if(id==6){
+            playID1.setVisible(false);
+            playID2.setVisible(false);
+            playID3.setVisible(false);
+            playID4.setVisible(false);
+            playID5.setVisible(false);
+            playID6.setVisible(true);
+        }
     }
 
 

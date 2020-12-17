@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="340.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ThemesController">
+   <children>
+      <ImageView fitHeight="340.0" fitWidth="600.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/settingBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bluePlay" fitHeight="79.0" fitWidth="136.0" layoutX="44.0" layoutY="44.0"  onMouseClicked="#blueBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundBlue.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playGrey" fitHeight="79.0" fitWidth="135.0" layoutX="242.0" layoutY="44.0"  onMouseClicked="#greyBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundGrey.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playBlackwhite" fitHeight="95.0" fitWidth="135.0" layoutX="417.0" layoutY="44.0"  onMouseClicked="#whiteBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundBlackandWhite.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playPink" fitHeight="89.0" fitWidth="135.0" layoutX="44.0" layoutY="165.0" pickOnBounds="true"  onMouseClicked="#pinkBack" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundPink.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playBlack" fitHeight="79.0" fitWidth="146.0" layoutX="242.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true"  onMouseClicked="#blackBack">
+         <image>
+            <Image url="@../assets/PlayBackGroundAi.png" />
+         </image></ImageView>
+      <ImageView fx:id="playWhite" fitHeight="79.0" fitWidth="144.0" layoutX="428.0" layoutY="165.0" pickOnBounds="true"  onMouseClicked="#white1Back" preserveRatio="true">
+         <image>
+            <Image url="@../assets/AiPlayBackGroundWhite1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

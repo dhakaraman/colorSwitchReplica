@@ -29,10 +29,12 @@ public class MainPageController{
     private ImageView circle1,circle2,circle3,circle4,circle5;
 
     @FXML
-    private ImageView linex1,linex2;
+    private ImageView linex1,linex2,settings;
 
 
     public void initialize() throws IOException {
+
+        Obstracle.imageRotate(settings,-1,true);
 
         File file = new File("SavedGames.txt");
         if(!file.exists()){
