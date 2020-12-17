@@ -113,6 +113,7 @@ public class ThemesController implements Initializable {
     }
 
     public void backToSetting() throws Exception{
+        GameElements.addMusic("/Sound Effects/button.wav");
         AnchorPane pane= FXMLLoader.load(getClass().getResource("settings.fxml"));
         themeRoot.getChildren().setAll(pane);
     }

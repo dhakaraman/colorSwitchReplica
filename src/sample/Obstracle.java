@@ -33,13 +33,6 @@ public abstract class Obstracle extends GameElements {
             timeline.stop();
     }
 
-    public static void rotateAnitClock(Rotate r1){
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(r1.angleProperty(), 0)),
-                new KeyFrame(Duration.seconds(1000), new KeyValue(r1.angleProperty(), -36000)));
-        timeline.play();
-    }
-
     public static void imageRotate(ImageView object,int rotation, boolean rotate){
         RotateTransition transition1 = new RotateTransition(Duration.seconds(30), object);
         transition1.setByAngle(rotation*3600);

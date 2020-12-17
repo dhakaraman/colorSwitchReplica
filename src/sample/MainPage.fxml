@@ -5,7 +5,7 @@
 
 <AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainPageController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="1024.0" layoutX="133.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../assets/MainMenuPageAi.png" />
          </image></ImageView>
@@ -55,6 +55,10 @@
       <ImageView fx:id="settings" fitHeight="79.0" fitWidth="82.0" layoutX="25.0" layoutY="14.0" onMouseClicked="#settingPane" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/SettingButton.png" />
+         </image></ImageView>
+      <ImageView fitHeight="55.0" fitWidth="92.0" layoutX="883.0" layoutY="29.0" pickOnBounds="true" onMouseClicked="#howToPlay" preserveRatio="true">
+         <image>
+            <Image url="@../assets/QuestionMark.gif" />
          </image></ImageView>
 
    </children>

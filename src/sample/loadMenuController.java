@@ -96,7 +96,7 @@ public class loadMenuController {
     public void loadGame() throws IOException, ClassNotFoundException {
         ObservableList selectedIndices = textField.getSelectionModel().getSelectedIndices();
         for(Object o : selectedIndices){
-            System.out.println("o = " + o + " (" + o.getClass() + ")");
+            //System.out.println("o = " + o + " (" + o.getClass() + ")");
             GameElements.addMusic("/Sound Effects/button.wav");
             FXMLLoader load = new FXMLLoader(getClass().getResource("GamePlay.fxml"));
             AnchorPane Pane = load.load();
@@ -114,8 +114,10 @@ public class loadMenuController {
                     new FileInputStream("SavedGames.txt"));
             obj = (DataTableObj) in.readObject();
             game=obj;
-            for(int i=0;i<obj.gameData.size();i++){
-                textField.getItems().add(i+1+". Your score = "+ obj.gameData.get(i).score);
+            int i=0;
+            for(DataTable name : obj.gameData){
+                textField.getItems().add(i+1+". Your score = "+ name.score);
+                i++;
             }
 
         }

@@ -65,6 +65,7 @@ public class pauseMenuController  implements Initializable {
 
     @FXML
     public void saveGame() throws IOException, ClassNotFoundException{
+        GameElements.addMusic("/Sound Effects/button.wav");
         ObjectInputStream in = null;
         DataTableObj object;
         try {

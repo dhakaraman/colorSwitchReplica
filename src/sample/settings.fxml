@@ -18,10 +18,28 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="219.0" layoutY="112.0" onMouseClicked="#themeManager" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="60.0" fitWidth="79.0" layoutX="528.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#backToMain">
+      <ImageView fitHeight="52.0" fitWidth="132.0" layoutX="300.0" layoutY="106.0" onMouseClicked="#themeManager" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/themeButton.jpeg" />
+         </image></ImageView>
+      <ImageView fitHeight="60.0" fitWidth="79.0" layoutX="528.0" layoutY="1.0" onMouseClicked="#backToMain" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/backButtonImage.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="43.0" layoutY="117.0" text="Change Play Background" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="225.0" text="How to play" textFill="#fffefe">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="58.0" layoutX="350.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#howToPlay">
+         <image>
+            <Image url="@../assets/iButton.png" />
          </image>
       </ImageView>
    </children>

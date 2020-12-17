@@ -3,10 +3,12 @@ package sample;
 import javafx.animation.RotateTransition;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -83,6 +85,7 @@ public class MainPageController{
 
     @FXML
     void settingPane(MouseEvent event) throws IOException {
+        GameElements.addMusic("/Sound Effects/button.wav");
         primaryStage = new Stage();
         Parent mainPage=FXMLLoader.load(getClass().getResource("settings.fxml"));
         Scene scene = new Scene(mainPage,600,340);
@@ -91,4 +94,12 @@ public class MainPageController{
         primaryStage.show();
     }
 
+    public void howToPlay(MouseEvent mouseEvent) {
+        GameElements.addMusic("/Sound Effects/button.wav");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Tap, Tap, Tap to get the ball past each obstacle. Follow the colour pattern to cross each obstacle. Timing and Patience are the keys to victory. Earn stars and enjoy the game!.", ButtonType.OK, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            alert.hide();
+        }
+    }
 }

@@ -32,51 +32,6 @@ public class sqaureShapeController extends Obstracle implements Initializable {
         rotatingSpeed();
     }
 
-//    @Override
-//    public boolean checkColor(BallController ball) {
-//
-//        if(ball.ballID.getFill().equals(line1.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            else
-//                return false;
-//        }
-//        else if(ball.ballID.getFill().equals(line2.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            else
-//                return false;
-//        }
-//        else if(ball.ballID.getFill().equals(line3.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line4.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            else
-//                return false;
-//        }
-//        else if(ball.ballID.getFill().equals(line4.getFill()) && line1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(line2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            if(line1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !sqrID.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()))
-//                return true;
-//            else
-//                return false;
-//        }
-//        return false;
-//    }
 @Override
 public boolean checkColor(BallController obj){
 
@@ -84,7 +39,7 @@ public boolean checkColor(BallController obj){
     Shape s2 = Shape.intersect(line2,obj.ballID);
     Shape s3 = Shape.intersect(line3,obj.ballID);
     Shape s4 = Shape.intersect(line4,obj.ballID);
-    //System.out.println(line1.getFill()+" "+line2.getFill()+" "+line3.getFill()+" "+line4.getFill()+"  "+obj.ballID.getFill());
+
     if(s1.getBoundsInParent().getWidth() != -1 && !(line1.getFill().equals(obj.ballID.getFill()))){
         return true;
     }

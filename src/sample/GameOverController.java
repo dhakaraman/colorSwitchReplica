@@ -43,15 +43,6 @@ public class GameOverController{
 
     public void initialize() {
 
-//        Popup popup = new Popup();
-//        button.setText("Game Saved!");
-//        button.setStyle(" -fx-background-color: #885c5e;");
-//        popup.getContent().add(button);
-//        popup.setAnchorX(190);
-//        popup.setAnchorY(90);
-//        popup.show(Main.stage);
-//        popup.setAutoHide(true);
-
         Obstracle.imageRotate(circle1,1,true);
         Obstracle.imageRotate(circle2,1,true);
 

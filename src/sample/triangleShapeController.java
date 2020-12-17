@@ -46,44 +46,6 @@ public class triangleShapeController extends Obstracle implements Initializable{
     }
 
 
-//    @Override
-//    public boolean checkColor(BallController ball) {
-//
-//        if(ball.ballID.getFill().equals(tri1.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            else
-//                return false;
-//        }
-//        else if(ball.ballID.getFill().equals(tri2.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0){
-//            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            if(tri3.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            else
-//                return false;
-//        }
-//        else if(ball.ballID.getFill().equals(tri3.getFill()) && tri1.getLayoutY()-ball.ballID.getLayoutY()+150>=0) {
-//            if(tri2.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            if(tri1.getBoundsInParent().intersects(ball.ballID.getBoundsInParent()) && !innerTri.getBoundsInParent().intersects(ball.ballID.getBoundsInParent())){
-//                return true;
-//            }
-//            else
-//                return false;
-//        }
-//
-//        return false;
-//    }
-
-
     @Override
     public boolean checkColor(BallController obj){
 

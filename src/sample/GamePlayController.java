@@ -34,7 +34,7 @@ public class GamePlayController implements Serializable {
     private AnchorPane playRoot;
 
     @FXML
-    public ImageView circleID,playID1,playID2,playID3,playID4,playID5,playID6;
+    public ImageView circleID,playID1,playID2,playID3,playID4,playID5,playID6,playGif;
 
     private DataTable lastGameData;
 
@@ -149,11 +149,13 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(false);
             playID5.setVisible(false);
             playID6.setVisible(false);
+            playGif.setVisible(false);
 
         }
         else if(id==2){
             playID1.setVisible(false);
             playID2.setVisible(true);
+            playGif.setVisible(true);
             playID3.setVisible(false);
             playID4.setVisible(false);
             playID5.setVisible(false);
@@ -166,6 +168,7 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(false);
             playID5.setVisible(false);
             playID6.setVisible(false);
+            playGif.setVisible(false);
         }
         else if(id==4){
             playID1.setVisible(false);
@@ -174,6 +177,7 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(true);
             playID5.setVisible(false);
             playID6.setVisible(false);
+            playGif.setVisible(false);
         }
         else if(id==5){
             playID1.setVisible(false);
@@ -182,6 +186,7 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(false);
             playID5.setVisible(true);
             playID6.setVisible(false);
+            playGif.setVisible(false);
         }
         else if(id==6){
             playID1.setVisible(false);
@@ -198,6 +203,7 @@ public class GamePlayController implements Serializable {
             playID4.setVisible(false);
             playID5.setVisible(false);
             playID6.setVisible(false);
+            playGif.setVisible(false);
         }
     }
 

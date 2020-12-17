@@ -17,6 +17,11 @@
             <Image url="@../assets/AiPlayBackGroundWhite1.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="playGif" fitHeight="600.0" fitWidth="607.0" layoutX="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/PlayBackGround11.gif" />
+         </image>
+      </ImageView>
       <ImageView fx:id="playID3" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/AiPlayBackGroundBlackandWhite.png" />
@@ -32,12 +37,12 @@
             <Image url="@../assets/AiPlayBackGroundGrey.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="playID6" fitHeight="600.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playID6" fitHeight="600.0" fitWidth="1024.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/AiPlayBackGroundPink.png" />
          </image>
       </ImageView>
-      <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="108.0" prefWidth="158.0" text="0" textAlignment="CENTER" textFill="#fffafa">
+      <Label fx:id="textField" layoutX="86.0" layoutY="53.0" prefHeight="108.0" prefWidth="158.0" text="0" textAlignment="CENTER" textFill="#976565">
          <font>
             <Font size="74.0" />
          </font>

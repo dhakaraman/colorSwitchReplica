@@ -53,7 +53,4 @@ public class ColorSwitchController extends Obstracle {
 
     }
 
-
-
-
 }

@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -35,19 +36,14 @@ public class settingsController {
     private AnchorPane settingRoot;
 
     public void initialize() throws Exception {
-//        Media sound = new Media(GameElements.class.getResource("/Sound Effects/ColorSwitchGame.mp3").toString());
-//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.setAutoPlay(true);
-//        mediaPlayer.setStartTime(Duration.seconds(0));
-//        mediaPlayer.setStopTime(Duration.seconds(50));
 
         slider.setValue(Main.mediaPlayer.getVolume() * 100);
-//        slider.setValue(GameElements.mediaPlayer.getVolume() * 100);
+
         slider.valueProperty().addListener(new InvalidationListener() {
             @Override
             public void invalidated(Observable observable) {
                 Main.mediaPlayer.setVolume(slider.getValue() / 100);
-//                GameElements.mediaPlayer.setVolume(slider.getValue() / 100);
+
             }
         });
 
@@ -58,6 +54,16 @@ public class settingsController {
         settingRoot.getChildren().setAll(pane);
     }
     public void backToMain() throws Exception{
+        GameElements.addMusic("/Sound Effects/button.wav");
         MainPageController.primaryStage.close();
+    }
+
+    public void howToPlay(MouseEvent mouseEvent) {
+        GameElements.addMusic("/Sound Effects/button.wav");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Tap, Tap, Tap to get the ball past each obstacle. Follow the colour pattern to cross each obstacle. Timing and Patience are the keys to victory. Earn stars and enjoy the game!.", ButtonType.OK, ButtonType.CANCEL);
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK){
+            alert.hide();
+        }
     }
 }
